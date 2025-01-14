@@ -6,7 +6,7 @@
 
 #include "z_obj_switch.h"
 #include "assets/objects/gameplay_dangeon_keep/gameplay_dangeon_keep.h"
-#include "assets/mdta/objects/gameplay_dangeon_keep/mdta_crystal_switch/mdta_crystal_switch.h"
+#include "assets/mdta/objects/mdta_crystal_switch/mdta_crystal_switch.h"
 #include "terminal.h"
 
 #define FLAGS ACTOR_FLAG_UPDATE_CULLING_DISABLED
@@ -23,7 +23,7 @@ void ObjSwitch_Destroy(Actor* thisx, PlayState* play);
 void ObjSwitch_Update(Actor* thisx, PlayState* play);
 void ObjSwitch_Draw(Actor* thisx, PlayState* play);
 
-// mdta: Floor Switch
+// Floor Switch
 void ObjSwitch_FloorUpInit(ObjSwitch* this);
 void ObjSwitch_FloorUp(ObjSwitch* this, PlayState* play);
 void ObjSwitch_FloorPressInit(ObjSwitch* this);
@@ -33,7 +33,7 @@ void ObjSwitch_FloorDown(ObjSwitch* this, PlayState* play);
 void ObjSwitch_FloorReleaseInit(ObjSwitch* this);
 void ObjSwitch_FloorRelease(ObjSwitch* this, PlayState* play);
 
-// mdta: Eye Switch
+// Eye Switch
 void ObjSwitch_EyeFrozenInit(ObjSwitch* this);
 void ObjSwitch_EyeInit(ObjSwitch* this, PlayState* play);
 void ObjSwitch_EyeOpenInit(ObjSwitch* this);
@@ -45,7 +45,7 @@ void ObjSwitch_EyeClosed(ObjSwitch* this, PlayState* play);
 void ObjSwitch_EyeOpeningInit(ObjSwitch* this);
 void ObjSwitch_EyeOpening(ObjSwitch* this, PlayState* play);
 
-// mdta: Crystal Switch
+// Crystal Switch
 void ObjSwitch_CrystalOffInit(ObjSwitch* this);
 void ObjSwitch_CrystalOff(ObjSwitch* this, PlayState* play);
 void ObjSwitch_CrystalTurnOnInit(ObjSwitch* this);
@@ -55,7 +55,7 @@ void ObjSwitch_CrystalOn(ObjSwitch* this, PlayState* play);
 void ObjSwitch_CrystalTurnOffInit(ObjSwitch* this);
 void ObjSwitch_CrystalTurnOff(ObjSwitch* this, PlayState* play);
 
-// mdta: MDTA Crystal Switch
+// MDTA Crystal Switch
 void ObjSwitch_MDTA_CrystalOffInit(ObjSwitch* this);
 void ObjSwitch_MDTA_CrystalOff(ObjSwitch* this, PlayState* play);
 void ObjSwitch_MDTA_CrystalTurnOnInit(ObjSwitch* this);
@@ -64,7 +64,7 @@ void ObjSwitch_MDTA_CrystalOnInit(ObjSwitch* this);
 void ObjSwitch_MDTA_CrystalOn(ObjSwitch* this, PlayState* play);
 void ObjSwitch_MDTA_CrystalTurnOffInit(ObjSwitch* this);
 void ObjSwitch_MDTA_CrystalTurnOff(ObjSwitch* this, PlayState* play);
-// mdta: END
+//
 
 ActorProfile Obj_Switch_Profile = {
     /**/ ACTOR_OBJ_SWITCH,
@@ -325,11 +325,12 @@ void ObjSwitch_Init(Actor* thisx, PlayState* play) {
         ObjSwitch_InitTrisCollider(this, play, &sRustyFloorTrisInit);
     } else if (type == OBJSWITCH_TYPE_EYE) {
         ObjSwitch_InitTrisCollider(this, play, &sEyeTrisInit);
-    } else if (type == OBJSWITCH_TYPE_CRYSTAL || type == OBJSWITCH_TYPE_CRYSTAL_TARGETABLE) {
+    } else if (type == OBJSWITCH_TYPE_CRYSTAL || type == OBJSWITCH_TYPE_CRYSTAL_TARGETABLE || 
+               OBJSWITCH_TYPE_MDTA_CRYSTAL || OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE) {
         ObjSwitch_InitJntSphCollider(this, play, &sCrystalJntSphInit);
     }
 
-    if (type == OBJSWITCH_TYPE_CRYSTAL_TARGETABLE) {
+    if (type == OBJSWITCH_TYPE_CRYSTAL_TARGETABLE || OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE) {
         this->dyna.actor.flags |= ACTOR_FLAG_ATTENTION_ENABLED;
         this->dyna.actor.attentionRangeType = ATTENTION_RANGE_4;
     }
@@ -338,6 +339,7 @@ void ObjSwitch_Init(Actor* thisx, PlayState* play) {
 
     if (OBJSWITCH_FROZEN(&this->dyna.actor) && (ObjSwitch_SpawnIce(this, play) == NULL)) {
         PRINTF_COLOR_RED();
+        // 氷発生失敗 = Ice Generation Failure
         PRINTF("Error : 氷発生失敗 (%s %d)\n", "../z_obj_switch.c", 732);
         PRINTF_RST();
         this->dyna.actor.params &= ~OBJSWITCH_FROZEN_FLAG;
@@ -359,7 +361,8 @@ void ObjSwitch_Init(Actor* thisx, PlayState* play) {
         } else {
             ObjSwitch_EyeOpenInit(this);
         }
-    } else if (type == OBJSWITCH_TYPE_CRYSTAL || type == OBJSWITCH_TYPE_CRYSTAL_TARGETABLE) {
+    } else if (type == OBJSWITCH_TYPE_CRYSTAL || type == OBJSWITCH_TYPE_CRYSTAL_TARGETABLE ||
+               OBJSWITCH_TYPE_MDTA_CRYSTAL || OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE) {
         if (isSwitchFlagSet) {
             ObjSwitch_CrystalOnInit(this);
         } else {
@@ -390,8 +393,15 @@ void ObjSwitch_Destroy(Actor* thisx, PlayState* play) {
         case OBJSWITCH_TYPE_CRYSTAL_TARGETABLE:
             Collider_DestroyJntSph(play, &this->jntSph.col);
             break;
+
+        case OBJSWITCH_TYPE_MDTA_CRYSTAL:
+        case OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE:
+            Collider_DestroyJntSph(play, &this->jntSph.col);
+            break;
     }
 }
+
+// Floor Switch Functions
 
 void ObjSwitch_FloorUpInit(ObjSwitch* this) {
     this->dyna.actor.scale.y = 33.0f / 200.0f;
@@ -520,6 +530,8 @@ void ObjSwitch_FloorRelease(ObjSwitch* this, PlayState* play) {
     }
 }
 
+// Eye Switch Functions
+
 s32 ObjSwitch_EyeIsHit(ObjSwitch* this) {
     Actor* collidingActor;
     s16 yawDiff;
@@ -617,6 +629,8 @@ void ObjSwitch_EyeOpening(ObjSwitch* this, PlayState* play) {
     }
 }
 
+// Crystal Switch Functions
+
 void ObjSwitch_CrystalOffInit(ObjSwitch* this) {
     this->crystalColor.r = 0;
     this->crystalColor.g = 0;
@@ -627,7 +641,7 @@ void ObjSwitch_CrystalOffInit(ObjSwitch* this) {
 
 void ObjSwitch_CrystalOff(ObjSwitch* this, PlayState* play) {
     switch (OBJSWITCH_SUBTYPE(&this->dyna.actor)) {
-        case OBJSWITCH_SUBTYPE_ONCE:
+        case OBJSWITCH_SUBTYPE_ONCE:    // (Yellow)
             if ((this->jntSph.col.base.acFlags & AC_HIT) && this->disableAcTimer <= 0) {
                 this->disableAcTimer = 10;
                 ObjSwitch_SetOn(this, play);
@@ -635,7 +649,7 @@ void ObjSwitch_CrystalOff(ObjSwitch* this, PlayState* play) {
             }
             break;
 
-        case OBJSWITCH_SUBTYPE_SYNC:
+        case OBJSWITCH_SUBTYPE_SYNC:    // (Yellow)
             if (((this->jntSph.col.base.acFlags & AC_HIT) && this->disableAcTimer <= 0) ||
                 Flags_GetSwitch(play, OBJSWITCH_SWITCH_FLAG(&this->dyna.actor))) {
 
@@ -645,7 +659,7 @@ void ObjSwitch_CrystalOff(ObjSwitch* this, PlayState* play) {
             }
             break;
 
-        case OBJSWITCH_SUBTYPE_TOGGLE:
+        case OBJSWITCH_SUBTYPE_TOGGLE:  // (Blue and Red)
             if ((this->jntSph.col.base.acFlags & AC_HIT) && !(this->prevColFlags & AC_HIT) &&
                 this->disableAcTimer <= 0) {
                 this->disableAcTimer = 10;
@@ -714,6 +728,121 @@ void ObjSwitch_CrystalTurnOff(ObjSwitch* this, PlayState* play) {
         Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_DIAMOND_SWITCH);
     }
 }
+
+//
+//
+// mdta: MDTA Switch Functions
+//
+//
+
+// Preparing to turn the Crystal Switch Off
+void ObjSwitch_MDTA_CrystalOffInit(ObjSwitch* this) {
+    this->crystalSubtype1texture = gCrstalSwitchRedTex;
+    this->actionFunc = ObjSwitch_MDTA_CrystalOff;
+}
+
+// Crystal Switch is Off - and it is hit
+void ObjSwitch_MDTA_CrystalOff(ObjSwitch* this, PlayState* play) {
+    switch (OBJSWITCH_SUBTYPE(&this->dyna.actor)) {
+        case OBJSWITCH_SUBTYPE_ONCE:    // (Yellow)
+            if ((this->jntSph.col.base.acFlags & AC_HIT) && this->disableAcTimer <= 0) {
+                this->disableAcTimer = 10;
+                ObjSwitch_SetOn(this, play);
+                ObjSwitch_MDTA_CrystalTurnOnInit(this);
+            }
+            break;
+
+        case OBJSWITCH_SUBTYPE_SYNC:    // (Yellow)
+            if (((this->jntSph.col.base.acFlags & AC_HIT) && this->disableAcTimer <= 0) ||
+                Flags_GetSwitch(play, OBJSWITCH_SWITCH_FLAG(&this->dyna.actor))) {
+
+                this->disableAcTimer = 10;
+                ObjSwitch_SetOn(this, play);
+                ObjSwitch_CrystalTurnOnInit(this);
+            }
+            break;
+
+        case OBJSWITCH_SUBTYPE_TOGGLE:  // (Blue and Red)
+            if ((this->jntSph.col.base.acFlags & AC_HIT) && !(this->prevColFlags & AC_HIT) &&
+                this->disableAcTimer <= 0) {
+                this->disableAcTimer = 10;
+                ObjSwitch_SetOn(this, play);
+                ObjSwitch_CrystalTurnOnInit(this);
+            }
+            //ObjSwitch_UpdateTwoTexScrollXY(this);
+            PRINTF_COLOR_RED();
+        // 氷発生失敗 = Ice Generation Failure
+        PRINTF("MDTA : My Switch Off (%s %d)\n", "../z_obj_switch.c", 732);
+        PRINTF_RST();
+            break;
+    }
+}
+
+// Begin to turn on the Crystal Switch
+void ObjSwitch_MDTA_CrystalTurnOnInit(ObjSwitch* this) {
+    this->actionFunc = ObjSwitch_MDTA_CrystalTurnOn;
+    this->cooldownTimer = 100;
+}
+
+// Turn on the Crystal Switch
+void ObjSwitch_MDTA_CrystalTurnOn(ObjSwitch* this, PlayState* play) {
+    if (!this->cooldownOn || func_8005B198() == this->dyna.actor.category || this->cooldownTimer <= 0) {
+        ObjSwitch_MDTA_CrystalOnInit(this);
+        if (OBJSWITCH_SUBTYPE(&this->dyna.actor) == OBJSWITCH_SUBTYPE_TOGGLE) {
+            //ObjSwitch_UpdateTwoTexScrollXY(this);
+        }
+        Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_DIAMOND_SWITCH);
+    }
+}
+
+// Begin the Crystal Switch being On
+void ObjSwitch_MDTA_CrystalOnInit(ObjSwitch* this) {
+    this->crystalSubtype1texture = gCrstalSwitchBlueTex;
+    this->actionFunc = ObjSwitch_MDTA_CrystalOn;
+}
+
+// The Crystal Switch is On
+void ObjSwitch_MDTA_CrystalOn(ObjSwitch* this, PlayState* play) {
+    switch (OBJSWITCH_SUBTYPE(&this->dyna.actor)) {
+        case OBJSWITCH_SUBTYPE_ONCE:
+        case OBJSWITCH_SUBTYPE_SYNC:
+            if (!Flags_GetSwitch(play, OBJSWITCH_SWITCH_FLAG(&this->dyna.actor))) {
+                ObjSwitch_MDTA_CrystalTurnOffInit(this);
+            }
+            break;
+
+        case OBJSWITCH_SUBTYPE_TOGGLE:
+            if ((this->jntSph.col.base.acFlags & AC_HIT) && !(this->prevColFlags & AC_HIT) &&
+                this->disableAcTimer <= 0) {
+                this->disableAcTimer = 10;
+                ObjSwitch_MDTA_CrystalTurnOffInit(this);
+                ObjSwitch_SetOff(this, play);
+            }
+            break;
+    }
+    //ObjSwitch_UpdateTwoTexScrollXY(this);
+}
+
+// Begin turning off the Crystal Switch
+void ObjSwitch_MDTA_CrystalTurnOffInit(ObjSwitch* this) {
+    this->actionFunc = ObjSwitch_MDTA_CrystalTurnOff;
+    this->cooldownTimer = 100;
+}
+
+// Turn off the Crystal Switch
+void ObjSwitch_MDTA_CrystalTurnOff(ObjSwitch* this, PlayState* play) {
+    if (OBJSWITCH_SUBTYPE(&this->dyna.actor) != OBJSWITCH_SUBTYPE_TOGGLE || !this->cooldownOn ||
+        func_8005B198() == this->dyna.actor.category || this->cooldownTimer <= 0) {
+        ObjSwitch_MDTA_CrystalOffInit(this);
+        //ObjSwitch_UpdateTwoTexScrollXY(this);
+        Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_DIAMOND_SWITCH);
+    }
+}
+
+
+
+
+// Object Updates
 
 void ObjSwitch_Update(Actor* thisx, PlayState* play) {
     ObjSwitch* this = (ObjSwitch*)thisx;
@@ -840,12 +969,36 @@ void ObjSwitch_DrawCrystal(Actor* thisx, PlayState* play) {
     CLOSE_DISPS(play->state.gfxCtx, "../z_obj_switch.c", 1533);
 }
 
+// mdta: MDTA Switch Draw
+void ObjSwitch_MDTA_DrawCrystal(Actor* thisx, PlayState* play) {
+
+    /* mdta: Commenting functions
+
+        gSPSegment(display list pointer,
+                   segment number 0-15,
+                   physical address base);
+
+        Gfx* Gfx_TexScroll(display list pointer,
+                      x,
+                      y,
+                      width,
+                      height);  
+    
+    gSPSegment(
+        POLY_OPA_DISP++, 0x09,
+        Gfx_TexScroll(play->state.gfxCtx, play2->gameplayFrames & 127, play2->gameplayFrames * -3 & 127, 64, 64));
+
+    */    
+}
+
 static ObjSwitchDrawFunc sDrawFuncs[] = {
     ObjSwitch_DrawFloor,      // OBJSWITCH_TYPE_FLOOR
     ObjSwitch_DrawFloorRusty, // OBJSWITCH_TYPE_FLOOR_RUSTY
     ObjSwitch_DrawEye,        // OBJSWITCH_TYPE_EYE
     ObjSwitch_DrawCrystal,    // OBJSWITCH_TYPE_CRYSTAL
     ObjSwitch_DrawCrystal,    // OBJSWITCH_TYPE_CRYSTAL_TARGETABLE
+    ObjSwitch_DrawCrystal,    // OBJSWITCH_TYPE_MDTA_CRYSTAL
+    ObjSwitch_DrawCrystal,    // OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE
 };
 
 void ObjSwitch_Draw(Actor* thisx, PlayState* play) {

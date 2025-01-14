@@ -15,6 +15,7 @@ typedef enum ObjSwitchType {
     /* 2 */ OBJSWITCH_TYPE_EYE,
     /* 3 */ OBJSWITCH_TYPE_CRYSTAL,
     /* 4 */ OBJSWITCH_TYPE_CRYSTAL_TARGETABLE,
+    /* mdta: MDTA Switch types */
     /* 5 */ OBJSWITCH_TYPE_MDTA_CRYSTAL,
     /* 6 */ OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE
 } ObjSwitchType;

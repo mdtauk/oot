@@ -14,7 +14,9 @@ typedef enum ObjSwitchType {
     /* 1 */ OBJSWITCH_TYPE_FLOOR_RUSTY,
     /* 2 */ OBJSWITCH_TYPE_EYE,
     /* 3 */ OBJSWITCH_TYPE_CRYSTAL,
-    /* 4 */ OBJSWITCH_TYPE_CRYSTAL_TARGETABLE
+    /* 4 */ OBJSWITCH_TYPE_CRYSTAL_TARGETABLE,
+    /* 5 */ OBJSWITCH_TYPE_MDTA_CRYSTAL,
+    /* 6 */ OBJSWITCH_TYPE_MDTA_CRYSTAL_TARGETABLE
 } ObjSwitchType;
 
 typedef enum ObjSwitchSubType {

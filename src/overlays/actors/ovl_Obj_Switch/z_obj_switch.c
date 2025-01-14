@@ -6,6 +6,7 @@
 
 #include "z_obj_switch.h"
 #include "assets/objects/gameplay_dangeon_keep/gameplay_dangeon_keep.h"
+#include "assets/mdta/objects/gameplay_dangeon_keep/mdta_crystal_switch/mdta_crystal_switch.h"
 #include "terminal.h"
 
 #define FLAGS ACTOR_FLAG_UPDATE_CULLING_DISABLED
@@ -22,6 +23,7 @@ void ObjSwitch_Destroy(Actor* thisx, PlayState* play);
 void ObjSwitch_Update(Actor* thisx, PlayState* play);
 void ObjSwitch_Draw(Actor* thisx, PlayState* play);
 
+// mdta: Floor Switch
 void ObjSwitch_FloorUpInit(ObjSwitch* this);
 void ObjSwitch_FloorUp(ObjSwitch* this, PlayState* play);
 void ObjSwitch_FloorPressInit(ObjSwitch* this);
@@ -31,6 +33,7 @@ void ObjSwitch_FloorDown(ObjSwitch* this, PlayState* play);
 void ObjSwitch_FloorReleaseInit(ObjSwitch* this);
 void ObjSwitch_FloorRelease(ObjSwitch* this, PlayState* play);
 
+// mdta: Eye Switch
 void ObjSwitch_EyeFrozenInit(ObjSwitch* this);
 void ObjSwitch_EyeInit(ObjSwitch* this, PlayState* play);
 void ObjSwitch_EyeOpenInit(ObjSwitch* this);
@@ -42,6 +45,7 @@ void ObjSwitch_EyeClosed(ObjSwitch* this, PlayState* play);
 void ObjSwitch_EyeOpeningInit(ObjSwitch* this);
 void ObjSwitch_EyeOpening(ObjSwitch* this, PlayState* play);
 
+// mdta: Crystal Switch
 void ObjSwitch_CrystalOffInit(ObjSwitch* this);
 void ObjSwitch_CrystalOff(ObjSwitch* this, PlayState* play);
 void ObjSwitch_CrystalTurnOnInit(ObjSwitch* this);
@@ -50,6 +54,17 @@ void ObjSwitch_CrystalOnInit(ObjSwitch* this);
 void ObjSwitch_CrystalOn(ObjSwitch* this, PlayState* play);
 void ObjSwitch_CrystalTurnOffInit(ObjSwitch* this);
 void ObjSwitch_CrystalTurnOff(ObjSwitch* this, PlayState* play);
+
+// mdta: MDTA Crystal Switch
+void ObjSwitch_MDTA_CrystalOffInit(ObjSwitch* this);
+void ObjSwitch_MDTA_CrystalOff(ObjSwitch* this, PlayState* play);
+void ObjSwitch_MDTA_CrystalTurnOnInit(ObjSwitch* this);
+void ObjSwitch_MDTA_CrystalTurnOn(ObjSwitch* this, PlayState* play);
+void ObjSwitch_MDTA_CrystalOnInit(ObjSwitch* this);
+void ObjSwitch_MDTA_CrystalOn(ObjSwitch* this, PlayState* play);
+void ObjSwitch_MDTA_CrystalTurnOffInit(ObjSwitch* this);
+void ObjSwitch_MDTA_CrystalTurnOff(ObjSwitch* this, PlayState* play);
+// mdta: END
 
 ActorProfile Obj_Switch_Profile = {
     /**/ ACTOR_OBJ_SWITCH,

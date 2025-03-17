@@ -78,6 +78,9 @@ void Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 skyboxId
                 }
             }
         }
+    } else if (skyboxId = SKYBOX_MDTA){
+        // Intercept skybox code to run my own code...
+        Mdta_Skybox_Draw();
     } else {
         // 128x128 and 128x64 textures
         // 5 or 6 faces

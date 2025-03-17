@@ -607,6 +607,9 @@ beginseg
     include "$(BUILD_DIR)/src/code/z_viszbuf.o"
     include "$(BUILD_DIR)/src/code/z_vr_box.o"
     include "$(BUILD_DIR)/src/code/z_vr_box_draw.o"
+    /* mdta */
+    include "$(BUILD_DIR)/src/code/mdta/mdta_skybox.o"
+    /* mdta end */
     include "$(BUILD_DIR)/src/code/z_player_call.o"
     include "$(BUILD_DIR)/src/code/z_fbdemo.o"
     include "$(BUILD_DIR)/src/code/z_fbdemo_triforce.o"

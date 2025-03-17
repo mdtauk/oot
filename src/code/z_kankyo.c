@@ -421,7 +421,7 @@ void Environment_Init(PlayState* play2, EnvironmentContext* envCtx, s32 unused) 
                     break;
             }
 
-            if (play->skyboxId == SKYBOX_NORMAL_SKY) {
+            if (play->skyboxId == SKYBOX_NORMAL_SKY || play->skyboxId == SKYBOX_MDTA) {
                 if (gWeatherMode == WEATHER_MODE_SNOW) {
                     play->envCtx.precipitation[PRECIP_SNOW_CUR] = play->envCtx.precipitation[PRECIP_SNOW_MAX] = 64;
                 } else if (gWeatherMode == WEATHER_MODE_RAIN) {
@@ -692,7 +692,7 @@ void Environment_UpdateSkybox(u8 skyboxId, EnvironmentContext* envCtx, SkyboxCon
                 break;
             }
         }
-    } else if (skyboxId == SKYBOX_NORMAL_SKY && !envCtx->skyboxDisabled) {
+    } else if (skyboxId == SKYBOX_NORMAL_SKY || skyboxId == SKYBOX_MDTA && !envCtx->skyboxDisabled) {
         for (i = 0; i < ARRAY_COUNT(gTimeBasedSkyboxConfigs[envCtx->skyboxConfig]); i++) {
             if (gSaveContext.skyboxTime >= gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].startTime &&
                 (gSaveContext.skyboxTime < gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].endTime ||

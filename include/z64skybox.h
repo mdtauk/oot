@@ -38,13 +38,22 @@ typedef enum SkyboxId {
     /* 0x20 */ SKYBOX_HOUSE_MIDO = 32,
     /* 0x21 */ SKYBOX_HOUSE_SARIA,
     /* 0x22 */ SKYBOX_HOUSE_ALLEY,
-    /* 0x27 */ SKYBOX_UNSET_27 = 39
+    /* 0x27 */ SKYBOX_UNSET_27 = 39,
+    /*
+        MDTA skybox ids
+    */
+   /* 0x28 */ SKYBOX_MDTA
 } SkyboxId;
 
 typedef enum SkyboxDrawType {
     /* 0 */ SKYBOX_DRAW_128,       // 128x128 top/bottom faces, 128x64 side faces
     /* 1 */ SKYBOX_DRAW_256_4FACE, // 256x256 all side faces with per-face palettes
-    /* 2 */ SKYBOX_DRAW_256_3FACE  // 256x256 3/4 side faces with per-face palettes
+    /* 2 */ SKYBOX_DRAW_256_3FACE,  // 256x256 3/4 side faces with per-face palettes
+    /*
+        MDTA drawtypes
+    */
+   /* 3 */ SKYBOX_DRAW_MDTA     // 3D model internal cylinder with vtxCols, 
+                                // Cloud layer meshes
 } SkyboxDrawType;
 
 typedef struct SkyboxContext {

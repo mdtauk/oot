@@ -2,6 +2,7 @@
 #include "terminal.h"
 #include "z64environment.h"
 #include "z64save.h"
+#include "src/code/mdta/mdta_skybox.h"
 
 typedef struct SkyboxFaceParams {
     /* 0x000 */ s32 xStart;
@@ -1015,6 +1016,14 @@ void Skybox_Setup(PlayState* play, SkyboxContext* skyboxCtx, s16 skyboxId) {
 
         case SKYBOX_UNSET_27:
             break;
+
+        /* MDTA additions */
+        case SKYBOX_MDTA:
+            skyboxCtx->drawType = SKYBOX_DRAW_MDTA;
+            // Run code to setup my own skybox
+            Mdta_Skybox_Setup(play->envCtx.skyboxConfig, play->envCtx.skybox1Index, 
+                              play->envCtx.skybox2Index, play->envCtx.skyboxBlend);
+            break;
     }
 }
 
@@ -1041,7 +1050,11 @@ void Skybox_Init(GameState* state, SkyboxContext* skyboxCtx, s16 skyboxId) {
             ASSERT(skyboxCtx->roomVtx != NULL, "vr_box->roomVtx != NULL", "../z_vr_box.c", 1640);
 
             Skybox_Calculate256(skyboxCtx, skyboxId);
-        } else {
+        } else if (skyboxCtx->drawType == SKYBOX_DRAW_MDTA) {
+            // Init my skybox
+            Mdta_Skybox_Init();
+        } 
+        else {
             skyboxCtx->dListBuf = GAME_STATE_ALLOC(state, 12 * 150 * sizeof(Gfx), "../z_vr_box.c", 1643);
             ASSERT(skyboxCtx->dListBuf != NULL, "vr_box->dpList != NULL", "../z_vr_box.c", 1644);
 

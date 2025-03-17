@@ -1042,6 +1042,11 @@ void Skybox_Init(GameState* state, SkyboxContext* skyboxCtx, s16 skyboxId) {
     if (skyboxId != SKYBOX_NONE) {
         PRINTF_COLOR_GREEN();
 
+        if (skyboxId == SKYBOX_MDTA) {
+            // Init my skybox
+            Mdta_Skybox_Init();
+        } 
+
         if (skyboxCtx->drawType != SKYBOX_DRAW_128) {
             skyboxCtx->dListBuf = GAME_STATE_ALLOC(state, 8 * 150 * sizeof(Gfx), "../z_vr_box.c", 1636);
             ASSERT(skyboxCtx->dListBuf != NULL, "vr_box->dpList != NULL", "../z_vr_box.c", 1637);
@@ -1050,10 +1055,7 @@ void Skybox_Init(GameState* state, SkyboxContext* skyboxCtx, s16 skyboxId) {
             ASSERT(skyboxCtx->roomVtx != NULL, "vr_box->roomVtx != NULL", "../z_vr_box.c", 1640);
 
             Skybox_Calculate256(skyboxCtx, skyboxId);
-        } else if (skyboxCtx->drawType == SKYBOX_DRAW_MDTA) {
-            // Init my skybox
-            Mdta_Skybox_Init();
-        } 
+        }
         else {
             skyboxCtx->dListBuf = GAME_STATE_ALLOC(state, 12 * 150 * sizeof(Gfx), "../z_vr_box.c", 1643);
             ASSERT(skyboxCtx->dListBuf != NULL, "vr_box->dpList != NULL", "../z_vr_box.c", 1644);

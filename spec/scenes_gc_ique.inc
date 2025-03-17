@@ -4077,3 +4077,21 @@ beginseg
     number 3
 endseg
 #endif
+/*
+    MDTA scenes
+*/
+beginseg
+    name "empty_skybox_test_scene"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/mdta/scenes/tests/empty_skybox_test/empty_skybox_test_scene.o"
+    number 2
+endseg
+
+beginseg
+    name "empty_skybox_test_room_0"
+    compress
+    romalign 0x1000
+    include "$(BUILD_DIR)/assets/mdta/scenes/tests/empty_skybox_test/empty_skybox_test_room_0.o"
+    number 3
+endseg

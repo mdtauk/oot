@@ -279,6 +279,7 @@ static MapSelectEntry sMapSelectEntries[] = {
     { "124:depth" T(GFXP_KATAKANA "ﾃｽﾄ", "Test"), MapSelect_LoadGame, ENTR_DEPTH_TEST_0 },
     { "125:" T(GFXP_KATAKANA "ﾊｲﾗﾙ" GFXP_HIRAGANA "ﾆﾜ" GFXP_KATAKANA "ｹﾞｰﾑ2", "Hyrule Garden Game 2"),
       MapSelect_LoadGame, ENTR_HAIRAL_NIWA2_0 },
+    { "126: Empty Skybox Test", MapSelect_LoadGame, ENTR_EMPTY_SKYBOX_TEST_0 },
 #endif
     { "title", (void*)MapSelect_LoadTitle, 0 },
 #if PLATFORM_N64

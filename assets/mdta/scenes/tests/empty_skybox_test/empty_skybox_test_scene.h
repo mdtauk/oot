@@ -1,0 +1,55 @@
+#ifndef EMPTY_SKYBOX_TEST_SCENE_H
+#define EMPTY_SKYBOX_TEST_SCENE_H
+
+#include "ultra64.h"
+#include "macros.h"
+#include "z64.h"
+
+
+extern SceneCmd empty_skybox_test_scene_header00[];
+extern RomFile empty_skybox_test_scene_roomList[];
+extern u8 _empty_skybox_test_room_0SegmentRomStart[];
+extern u8 _empty_skybox_test_room_0SegmentRomEnd[];
+extern ActorEntry empty_skybox_test_scene_header00_playerEntryList[];
+extern Spawn empty_skybox_test_scene_header00_entranceList[];
+extern EnvLightSettings empty_skybox_test_scene_header00_lightSettings[4];
+extern CollisionHeader empty_skybox_test_scene_collisionHeader;
+extern Vec3s empty_skybox_test_scene_camPosData[];
+extern BgCamInfo empty_skybox_test_scene_bgCamInfo[];
+extern SurfaceType empty_skybox_test_scene_polygonTypes[1];
+extern Vec3s empty_skybox_test_scene_vertices[25];
+extern CollisionPoly empty_skybox_test_scene_polygons[32];
+extern SceneCmd empty_skybox_test_room_0_header00[];
+extern Gfx empty_skybox_test_room_0_shapeHeader_entry_0_opaque[];
+extern Vtx empty_skybox_test_room_0_dl_E_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx empty_skybox_test_room_0_dl_E_mesh_layer_Opaque_vtx_0[19];
+extern Gfx empty_skybox_test_room_0_dl_E_mesh_layer_Opaque_tri_0[];
+extern Vtx empty_skybox_test_room_0_dl_Floor_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx empty_skybox_test_room_0_dl_Floor_mesh_layer_Opaque_vtx_0[31];
+extern Gfx empty_skybox_test_room_0_dl_Floor_mesh_layer_Opaque_tri_0[];
+extern Vtx empty_skybox_test_room_0_dl_Floor_mesh_layer_Opaque_vtx_1[31];
+extern Gfx empty_skybox_test_room_0_dl_Floor_mesh_layer_Opaque_tri_1[];
+extern Vtx empty_skybox_test_room_0_dl_N_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx empty_skybox_test_room_0_dl_N_mesh_layer_Opaque_vtx_0[17];
+extern Gfx empty_skybox_test_room_0_dl_N_mesh_layer_Opaque_tri_0[];
+extern Vtx empty_skybox_test_room_0_dl_S_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx empty_skybox_test_room_0_dl_S_mesh_layer_Opaque_vtx_0[16];
+extern Gfx empty_skybox_test_room_0_dl_S_mesh_layer_Opaque_tri_0[];
+extern Vtx empty_skybox_test_room_0_dl_W_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx empty_skybox_test_room_0_dl_W_mesh_layer_Opaque_vtx_0[26];
+extern Gfx empty_skybox_test_room_0_dl_W_mesh_layer_Opaque_tri_0[];
+extern Gfx mat_empty_skybox_test_room_0_dl_mat_east[];
+extern Gfx mat_empty_skybox_test_room_0_dl_floor_mat_layerOpaque[];
+extern Gfx mat_empty_skybox_test_room_0_dl_floor_mat_2_layerOpaque[];
+extern Gfx mat_empty_skybox_test_room_0_dl_mat_north[];
+extern Gfx mat_empty_skybox_test_room_0_dl_mat_south[];
+extern Gfx mat_empty_skybox_test_room_0_dl_mat_west[];
+extern Gfx empty_skybox_test_room_0_dl_E_mesh_layer_Opaque[];
+extern Gfx empty_skybox_test_room_0_dl_Floor_mesh_layer_Opaque[];
+extern Gfx empty_skybox_test_room_0_dl_N_mesh_layer_Opaque[];
+extern Gfx empty_skybox_test_room_0_dl_S_mesh_layer_Opaque[];
+extern Gfx empty_skybox_test_room_0_dl_W_mesh_layer_Opaque[];
+extern RoomShapeNormal empty_skybox_test_room_0_shapeHeader;
+extern RoomShapeDListsEntry empty_skybox_test_room_0_shapeDListsEntry[1];
+
+#endif

@@ -36,6 +36,7 @@
 #include "z64player.h"
 #include "z64save.h"
 #include "z64vis.h"
+#include "mdta/mdta_skybox.h"
 
 #include "global.h"
 
@@ -1398,6 +1399,9 @@ Play_Draw_skip:
         this->view.unk_124 = 0;
         if (this->skyboxId && (this->skyboxId != SKYBOX_UNSET_1D) && !this->envCtx.skyboxDisabled) {
             Skybox_UpdateMatrix(&this->skyboxCtx, this->view.eye.x, this->view.eye.y, this->view.eye.z);
+        }
+        if (this->skyboxId && (this->skyboxId == SKYBOX_MDTA) && !this->envCtx.skyboxDisabled) {
+            Mdta_Skybox_UpdateMatrix(&this->skyboxCtx, this->view.eye.x, this->view.eye.y, this->view.eye.z);
         }
     }
 

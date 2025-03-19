@@ -4058,7 +4058,7 @@ beginseg
     name "mdta_object_skybox"
     compress
     romalign 0x1000
-    include "$(BUILD_DIR)/assets/objects/mdta_obj_skybox/mdta_obj_skybox.o"
+    include "$(BUILD_DIR)/assets/mdta/objects/mdta_obj_skybox/mdta_obj_skybox.o"
     number 6
 endseg
 

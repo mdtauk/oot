@@ -16,7 +16,7 @@
 
 
 // Color Sets
-#define NUM_COLORS 25;
+#define NUM_COLORS 25
 
 typedef enum ColorSet{
     /* 00 */ INITIAL_COLOR_SET,
@@ -35,9 +35,9 @@ typedef enum ColorSet{
     /* 13 */ MAX_COLOUR_SETS
 } ColorSet;
 
-extern Color_RGBA8 colorSets[MAX_COLOUR_SETS][NUM_COLORS];
-
 extern Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS];
+
+
 
 
 // Textures
@@ -156,3 +156,15 @@ extern Gfx DL_sky_storm_day_OPA[];
 extern Gfx DL_sky_storm_night_OPA[];
 extern Gfx DL_sky_storm_sunrise_OPA[];
 extern Gfx DL_sky_storm_sunset_OPA[];
+
+
+
+
+extern u64 Skybox_Dome_North_DL_tex_sky_noise_i4[];
+extern Vtx Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_vtx_cull[8];
+extern Vtx Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_vtx_0[15];
+extern Gfx Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_tri_0[];
+extern Gfx mat_Skybox_Dome_North_DL_f3dlite_material_layerOpaque[];
+extern Gfx Skybox_Dome_North_DL[];
+
+#endif

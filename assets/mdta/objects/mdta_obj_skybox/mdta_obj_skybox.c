@@ -55,31 +55,31 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
         { 253, 246, 228, 255 }, // East02
         { 195, 200, 218, 255 }, // East03
         { 129, 144, 179, 255 }, // East04
-        { 057, 080, 121, 255 }, // East05
+        { 57, 80, 121, 255 }, // East05
         /* NE and SE Colours */
         { 196, 169, 153, 255 }, // NSEast01
         { 202, 193, 193, 255 }, // NSEast02
         { 158, 171, 198, 255 }, // NSEast03
         { 111, 131, 168, 255 }, // NSEast04
-        { 057, 080, 121, 255 }, // NSEast05
+        { 57,  80, 121, 255 }, // NSEast05
         /* North South Colours */
         { 188, 167, 160, 255 }, // NS01
         { 177, 176, 190, 255 }, // NS02
         { 119, 141, 182, 255 }, // NS03
-        { 086, 109, 151, 255 }, // NS04
-        { 058, 080, 120, 255 }, // NS05
+        { 86, 109, 151, 255 }, // NS04
+        { 58, 80, 120, 255 }, // NS05
         /* NW and SW Colours */
         { 167, 148, 156, 255 }, // NSWest01
         { 168, 176, 200, 255 }, // NSWest02
-        { 096, 127, 175, 255 }, // NSWest03
-        { 059, 090, 134, 255 }, // NSWest04
-        { 054, 077, 118, 255 }, // NSWest05
+        { 96, 127, 175, 255 }, // NSWest03
+        { 59, 90, 134, 255 }, // NSWest04
+        { 54, 77, 118, 255 }, // NSWest05
         /* West Colours */
         { 187, 167, 169, 255 }, // West01
         { 184, 189, 211, 255 }, // West02
         { 104, 136, 185, 255 }, // West03
-        { 059, 091, 136, 255 }, // West04
-        { 057, 079, 119, 255 }, // West05
+        { 59, 91, 136, 255 }, // West04
+        { 57, 79, 119, 255 }, // West05
     },
     // FINE_DAY_START_SKY_COLOR_SET
     {
@@ -87,100 +87,100 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
         { 176, 177, 176, 255 }, // East01
         { 155, 172, 188, 255 }, // East02
         { 116, 148, 177, 255 }, // East03
-        { 082, 117, 156, 255 }, // East04
-        { 075, 100, 136, 255 }, // East05
+        { 82, 117, 156, 255 }, // East04
+        { 75, 100, 136, 255 }, // East05
         /* NE and SE Colours */
         { 145, 161, 171, 255 }, // NSEast01
-        { 093, 129, 166, 255 }, // NSEast02
-        { 055, 105, 149, 255 }, // NSEast03
-        { 047, 090, 132, 255 }, // NSEast04
-        { 098, 094, 131, 255 }, // NSEast05
+        { 93, 129, 166, 255 }, // NSEast02
+        { 55, 105, 149, 255 }, // NSEast03
+        { 47, 90, 132, 255 }, // NSEast04
+        { 98, 94, 131, 255 }, // NSEast05
         /* North South Colours */
         { 120, 150, 178, 255 }, // NS01
-        { 047, 119, 169, 255 }, // NS02
-        { 018, 082, 146, 255 }, // NS03
-        { 001, 064, 118, 255 }, // NS04
-        { 011, 061, 112, 255 }, // NS05
+        { 47, 119, 169, 255 }, // NS02
+        { 18, 82, 146, 255 }, // NS03
+        { 1, 64, 118, 255 }, // NS04
+        { 11, 61, 112, 255 }, // NS05
         /* NW and SW Colours */
         { 143, 162, 179, 255 }, // NSWest01
-        { 067, 126, 174, 255 }, // NSWest02
-        { 023, 083, 145, 255 }, // NSWest03
-        { 017, 069, 121, 255 }, // NSWest04
-        { 037, 079, 121, 255 }, // NSWest05
+        { 67, 126, 174, 255 }, // NSWest02
+        { 23, 83, 145, 255 }, // NSWest03
+        { 17, 69, 121, 255 }, // NSWest04
+        { 37, 79, 121, 255 }, // NSWest05
         /* West Colours */
         { 117, 142, 162, 255 }, // West01
-        { 040, 106, 155, 255 }, // West02
-        { 019, 082, 142, 255 }, // West03
-        { 004, 065, 120, 255 }, // West04
-        { 016, 066, 117, 255 }, // West05
+        { 40, 106, 155, 255 }, // West02
+        { 19, 82, 142, 255 }, // West03
+        { 04, 65, 120, 255 }, // West04
+        { 16, 66, 117, 255 }, // West05
     },
 	// FINE_DAY_END_SKY_COLOR_SET
 	// East and West swap sides to match the sun's position
     {
         /* East Colours */
         { 117, 142, 162, 255 }, // East01
-        { 040, 106, 155, 255 }, // East02
-        { 019, 082, 142, 255 }, // East03
-        { 004, 065, 120, 255 }, // East04
-        { 016, 066, 117, 255 }, // East05
+        { 40, 106, 155, 255 }, // East02
+        { 19, 82, 142, 255 }, // East03
+        { 04, 65, 120, 255 }, // East04
+        { 16, 66, 117, 255 }, // East05
         /* NE and SE Colours */
         { 143, 162, 179, 255 }, // NSEast01
-        { 067, 126, 174, 255 }, // NSEast02
-        { 023, 083, 145, 255 }, // NSEast03
-        { 017, 069, 121, 255 }, // NSEast04
-        { 037, 079, 121, 255 }, // NSEast05
+        { 67, 126, 174, 255 }, // NSEast02
+        { 23, 83, 145, 255 }, // NSEast03
+        { 17, 69, 121, 255 }, // NSEast04
+        { 37, 79, 121, 255 }, // NSEast05
         /* North South Colours */
         { 120, 150, 178, 255 }, // NS01
-        { 047, 119, 169, 255 }, // NS02
-        { 018, 082, 146, 255 }, // NS03
-        { 001, 064, 118, 255 }, // NS04
-        { 011, 061, 112, 255 }, // NS05
+        { 47, 119, 169, 255 }, // NS02
+        { 18, 82, 146, 255 }, // NS03
+        { 01, 64, 118, 255 }, // NS04
+        { 11, 61, 112, 255 }, // NS05
         /* NW and SW Colours */
         { 145, 161, 171, 255 }, // NSWest01
-        { 093, 129, 166, 255 }, // NSWest02
-        { 055, 105, 149, 255 }, // NSWest03
-        { 047, 090, 132, 255 }, // NSWest04
-        { 098, 094, 131, 255 }, // NSWest05
+        { 93, 129, 166, 255 }, // NSWest02
+        { 55, 105, 149, 255 }, // NSWest03
+        { 47, 90, 132, 255 }, // NSWest04
+        { 98, 94, 131, 255 }, // NSWest05
         /* West Colours */
         { 176, 177, 176, 255 }, // West01
         { 155, 172, 188, 255 }, // West02
         { 116, 148, 177, 255 }, // West03
-        { 082, 117, 156, 255 }, // West04
-        { 075, 100, 136, 255 }, // West05
+        { 82, 117, 156, 255 }, // West04
+        { 75, 100, 136, 255 }, // West05
     },
 	// FINE_SUNSET_SKY_COLOR_SET
 	// The lighter colours fall in the west as the sun sets
     {
         /* East Colours */
-        { 092, 077, 094, 255 }, // East01
+        { 92, 77, 94, 255 }, // East01
         { 159, 130, 107, 255 }, // East02
         { 104, 117, 123, 255 }, // East03
-        { 064, 070, 099, 255 }, // East04
-        { 056, 056, 074, 255 }, // East05
+        { 64, 70, 99, 255 }, // East04
+        { 56, 56, 74, 255 }, // East05
         /* NE and SE Colours */
         { 153, 108, 113, 255 }, // NSEast01
         { 218, 176, 125, 255 }, // NSEast02
         { 151, 167, 151, 255 }, // NSEast03
-        { 081, 101, 126, 255 }, // NSEast04
-        { 059, 060, 091, 255 }, // NSEast05
+        { 81, 101, 126, 255 }, // NSEast04
+        { 59, 60, 91, 255 }, // NSEast05
         /* North South Colours */
         { 200, 138, 120, 255 }, // NS01
         { 245, 202, 132, 255 }, // NS02
         { 198, 211, 172, 255 }, // NS03
         { 124, 147, 156, 255 }, // NS04
-        { 075, 087, 119, 255 }, // NS05
+        { 75, 87, 119, 255 }, // NS05
         /* NW and SW Colours */
         { 216, 136, 111, 255 }, // NSWest01
         { 245, 194, 120, 255 }, // NSWest02
         { 204, 212, 167, 255 }, // NSWest03
         { 139, 163, 164, 255 }, // NSWest04
-        { 081, 100, 129, 255 }, // NSWest05
+        { 81, 100, 129, 255 }, // NSWest05
         /* West Colours */
         { 231, 142, 108, 255 }, // West01
         { 248, 192, 114, 255 }, // West02
         { 212, 213, 165, 255 }, // West03
         { 148, 170, 166, 255 }, // West04
-        { 083, 102, 131, 255 }, // West05
+        { 83, 102, 131, 255 }, // West05
     },
     // FINE_NIGHT_START_SKY_COLOR_SET
 	// Moon rises from the East
@@ -188,113 +188,113 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
         /* East Colours */
         { 180, 183, 197, 255 }, // East01
         { 132, 148, 163, 255 }, // East02
-        { 076, 093, 119, 255 }, // East03
-        { 050, 067, 087, 255 }, // East04
-        { 031, 042, 057, 255 }, // East05
+        { 76, 93, 119, 255 }, // East03
+        { 50, 67, 87, 255 }, // East04
+        { 31, 42, 57, 255 }, // East05
         /* NE and SE Colours */
         { 176, 177, 182, 255 }, // NSEast01
-        { 088, 105, 131, 255 }, // NSEast02
-        { 063, 081, 105, 255 }, // NSEast03
-        { 044, 057, 074, 255 }, // NSEast04
-        { 026, 034, 045, 255 }, // NSEast05
+        { 88, 105, 131, 255 }, // NSEast02
+        { 63, 81, 105, 255 }, // NSEast03
+        { 44, 57, 74, 255 }, // NSEast04
+        { 26, 34, 45, 255 }, // NSEast05
         /* North South Colours */
         { 170, 169, 175, 255 }, // NS01
-        { 061, 073, 095, 255 }, // NS02
-        { 033, 039, 051, 255 }, // NS03
-        { 020, 025, 031, 255 }, // NS04
-        { 022, 029, 037, 255 }, // NS05
+        { 61, 73, 95, 255 }, // NS02
+        { 33, 39, 51, 255 }, // NS03
+        { 20, 25, 31, 255 }, // NS04
+        { 22, 29, 37, 255 }, // NS05
         /* NW and SW Colours */
         { 162, 165, 172, 255 }, // NSWest01
-        { 088, 105, 131, 255 }, // NSWest02
-        { 048, 057, 072, 255 }, // NSWest03
-        { 017, 069, 121, 255 }, // NSWest04
-        { 037, 079, 121, 255 }, // NSWest05
+        { 88, 105, 131, 255 }, // NSWest02
+        { 48, 57, 72, 255 }, // NSWest03
+        { 17, 69, 121, 255 }, // NSWest04
+        { 37, 79, 121, 255 }, // NSWest05
         /* West Colours */
         { 171, 172, 176, 255 }, // West01
-        { 080, 096, 119, 255 }, // West02
-        { 019, 082, 142, 255 }, // West03
-        { 039, 047, 058, 255 }, // West04
-        { 023, 030, 038, 255 }, // West05
+        { 80, 96, 119, 255 }, // West02
+        { 19, 82, 142, 255 }, // West03
+        { 39, 47, 58, 255 }, // West04
+        { 23, 30, 38, 255 }, // West05
     },
     // FINE_NIGHT_END_SKY_COLOR_SET
 	// East and West swap sides to match the moon's position
     {
         /* East Colours */
         { 171, 172, 176, 255 }, // East01
-        { 080, 096, 119, 255 }, // East02
-        { 019, 082, 142, 255 }, // East03
-        { 039, 047, 058, 255 }, // East04
-        { 023, 030, 038, 255 }, // East05
+        { 80, 96, 119, 255 }, // East02
+        { 19, 82, 142, 255 }, // East03
+        { 39, 47, 58, 255 }, // East04
+        { 23, 30, 38, 255 }, // East05
         /* NE and SE Colours */
         { 162, 165, 172, 255 }, // NSEast01
-        { 088, 105, 131, 255 }, // NSEast02
-        { 048, 057, 072, 255 }, // NSEast03
-        { 017, 069, 121, 255 }, // NSEast04
-        { 037, 079, 121, 255 }, // NSEast05
+        { 88, 105, 131, 255 }, // NSEast02
+        { 48, 57, 72, 255 }, // NSEast03
+        { 17, 69, 121, 255 }, // NSEast04
+        { 37, 79, 121, 255 }, // NSEast05
         /* North South Colours */
         { 170, 169, 175, 255 }, // NS01
-        { 061, 073, 095, 255 }, // NS02
-        { 033, 039, 051, 255 }, // NS03
-        { 020, 025, 031, 255 }, // NS04
-        { 022, 029, 037, 255 }, // NS05
+        { 61, 73, 95, 255 }, // NS02
+        { 33, 39, 51, 255 }, // NS03
+        { 20, 25, 31, 255 }, // NS04
+        { 22, 29, 37, 255 }, // NS05
         /* NW and SW Colours */
         { 176, 177, 182, 255 }, // NSWest01
-        { 088, 105, 131, 255 }, // NSWest02
-        { 063, 081, 105, 255 }, // NSWest03
-        { 044, 057, 074, 255 }, // NSWest04
-        { 026, 034, 045, 255 }, // NSWest05
+        { 88, 105, 131, 255 }, // NSWest02
+        { 63, 81, 105, 255 }, // NSWest03
+        { 44, 57, 74, 255 }, // NSWest04
+        { 26, 34, 45, 255 }, // NSWest05
         /* West Colours */
         { 180, 183, 197, 255 }, // West01
         { 132, 148, 163, 255 }, // West02
-        { 076, 093, 119, 255 }, // West03
-        { 050, 067, 087, 255 }, // West04
-        { 031, 042, 057, 255 }, // West05
+        { 76, 93, 119, 255 }, // West03
+        { 50, 67, 87, 255 }, // West04
+        { 31, 42, 57, 255 }, // West05
     },
 	// STORM_SUNRISE_SKY_COLOR_SET
 	// Light coming from the east
     {
         /* East Colours */
-        { 227, 158, 072, 255 }, // East01
-        { 235, 137, 048, 255 }, // East02
-        { 174, 100, 078, 255 }, // East03
-        { 104, 087, 089, 255 }, // East04
+        { 227, 158, 72, 255 }, // East01
+        { 235, 137, 48, 255 }, // East02
+        { 174, 100, 78, 255 }, // East03
+        { 104, 87, 89, 255 }, // East04
         { 130, 106, 110, 255 }, // East05
         /* NE and SE Colours */
-        { 140, 075, 057, 255 }, // NSEast01
-        { 220, 133, 060, 255 }, // NSEast02
-        { 197, 117, 090, 255 }, // NSEast03
+        { 140, 75, 57, 255 }, // NSEast01
+        { 220, 133, 60, 255 }, // NSEast02
+        { 197, 117, 90, 255 }, // NSEast03
         { 130, 120, 125, 255 }, // NSEast04
         { 157, 118, 116, 255 }, // NSEast05
         /* North South Colours */
-        { 073, 051, 052, 255 }, // NS01
-        { 156, 096, 067, 255 }, // NS02
-        { 188, 113, 091, 255 }, // NS03
+        { 73, 51, 52, 255 }, // NS01
+        { 156, 96, 67, 255 }, // NS02
+        { 188, 113, 91, 255 }, // NS03
         { 121, 114, 122, 255 }, // NS04
         { 149, 113, 114, 255 }, // NS05
         /* NW and SW Colours */
-        { 029, 035, 045, 255 }, // NSWest01
-        { 086, 062, 064, 255 }, // NSWest02
-        { 124, 088, 085, 255 }, // NSWest03
+        { 29, 35, 45, 255 }, // NSWest01
+        { 86, 62, 64, 255 }, // NSWest02
+        { 124, 88, 85, 255 }, // NSWest03
         { 131, 125, 133, 255 }, // NSWest04
         { 100, 100, 114, 255 }, // NSWest05
         /* West Colours */
-        { 024, 033, 042, 255 }, // West01
-        { 098, 067, 066, 255 }, // West02
-        { 079, 067, 073, 255 }, // West03
+        { 24, 33, 42, 255 }, // West01
+        { 98, 67, 66, 255 }, // West02
+        { 79, 67, 73, 255 }, // West03
         { 122, 125, 136, 255 }, // West04
-        { 082, 105, 126, 255 }, // West05
+        { 82, 105, 126, 255 }, // West05
     },
     // STORM_DAY_START_SKY_COLOR_SET
     {
         /* East Colours */
-        { 081, 094, 112, 255 }, // East01
-        { 095, 110, 130, 255 }, // East02
+        { 81, 94, 112, 255 }, // East01
+        { 95, 110, 130, 255 }, // East02
         { 146, 159, 175, 255 }, // East03
         { 145, 157, 173, 255 }, // East04
         { 220, 223, 228, 255 }, // East05
         /* NE and SE Colours */
-        { 085, 099, 118, 255 }, // NSEast01
-        { 097, 112, 133, 255 }, // NSEast02
+        { 85, 99, 118, 255 }, // NSEast01
+        { 97, 112, 133, 255 }, // NSEast02
         { 132, 147, 165, 255 }, // NSEast03
         { 156, 167, 182, 255 }, // NSEast04
         { 186, 194, 203, 255 }, // NSEast05
@@ -312,7 +312,7 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
         { 151, 162, 178, 255 }, // NSWest05
         /* West Colours */
         { 125, 135, 151, 255 }, // West01
-        { 085, 097, 116, 255 }, // West02
+        { 85, 97, 116, 255 }, // West02
         { 147, 157, 173, 255 }, // West03
         { 116, 129, 149, 255 }, // West04
         { 138, 151, 169, 255 }, // West05
@@ -322,7 +322,7 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
     {
         /* East Colours */
         { 125, 135, 151, 255 }, // East01
-        { 085, 097, 116, 255 }, // East02
+        { 85, 97, 116, 255 }, // East02
         { 147, 157, 173, 255 }, // East03
         { 116, 129, 149, 255 }, // East04
         { 138, 151, 169, 255 }, // East05
@@ -339,14 +339,14 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
         { 158, 169, 185, 255 }, // NS04
         { 168, 176, 189, 255 }, // NS05
         /* NW and SW Colours */
-        { 085, 099, 118, 255 }, // NSWest01
-        { 097, 112, 133, 255 }, // NSWest02
+        { 85, 99, 118, 255 }, // NSWest01
+        { 97, 112, 133, 255 }, // NSWest02
         { 132, 147, 165, 255 }, // NSWest03
         { 156, 167, 182, 255 }, // NSWest04
         { 186, 194, 203, 255 }, // NSWest05
         /* West Colours */
-        { 081, 094, 112, 255 }, // West01
-        { 095, 110, 130, 255 }, // West02
+        {  81,  94, 112, 255 }, // West01
+        {  95, 110, 130, 255 }, // West02
         { 146, 159, 175, 255 }, // West03
         { 145, 157, 173, 255 }, // West04
         { 220, 223, 228, 255 }, // West05
@@ -355,136 +355,103 @@ Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS] = {
 	// Light coming from the west
     {
         /* East Colours */
-        { 201, 099, 052, 255 }, // East01
+        { 201, 99, 52, 255 }, // East01
         { 244, 173, 114, 255 }, // East02
         { 198, 149, 128, 255 }, // East03
-        { 089, 079, 101, 255 }, // East04
-        { 041, 029, 051, 255 }, // East05
+        { 89, 79, 101, 255 }, // East04
+        { 41, 29,  51, 255 }, // East05
         /* NE and SE Colours */
-        { 145, 067, 051, 255 }, // NSEast01
-        { 215, 141, 060, 255 }, // NSEast02
+        { 145, 67, 051, 255 }, // NSEast01
+        { 215, 141, 60, 255 }, // NSEast02
         { 140, 105, 109, 255 }, // NSEast03
-        { 059, 064, 093, 255 }, // NSEast04
-        { 032, 025, 047, 255 }, // NSEast05
+        { 59, 64, 93, 255 }, // NSEast04
+        { 32, 25, 47, 255 }, // NSEast05
         /* North South Colours */
-        { 127, 049, 043, 255 }, // NS01
-        { 187, 112, 095, 255 }, // NS02
-        { 072, 101, 109, 255 }, // NS03
-        { 043, 044, 072, 255 }, // NS04
-        { 026, 021, 043, 255 }, // NS05
+        { 127, 49, 43, 255 }, // NS01
+        { 187, 112, 95, 255 }, // NS02
+        { 72, 101, 109, 255 }, // NS03
+        { 43, 44, 72, 255 }, // NS04
+        { 26, 21, 43, 255 }, // NS05
         /* NW and SW Colours */
-        { 045, 025, 033, 255 }, // NSWest01
-        { 082, 061, 071, 255 }, // NSWest02
-        { 037, 048, 068, 255 }, // NSWest03
-        { 012, 024, 050, 255 }, // NSWest04
-        { 019, 017, 038, 255 }, // NSWest05
+        {  45,  25,  33, 255 }, // NSWest01
+        {  82,  61,  71, 255 }, // NSWest02
+        {  37,  48,  68, 255 }, // NSWest03
+        {  12,  24,  50, 255 }, // NSWest04
+        {  19,  17,  38, 255 }, // NSWest05
         /* West Colours */
-        { 032, 014, 020, 255 }, // West01
-        { 054, 036, 052, 255 }, // West02
-        { 014, 019, 040, 255 }, // West03
-        { 018, 019, 039, 255 }, // West04
-        { 016, 014, 035, 255 }, // West05
+        { 32, 14, 20, 255 }, // West01
+        { 54, 36, 52, 255 }, // West02
+        { 14, 19, 40, 255 }, // West03
+        { 18, 19, 39, 255 }, // West04
+        { 16, 14, 35, 255 }, // West05
     },
     // STORM_NIGHT_START_SKY_COLOR_SET
 	// Light comes from the East with the Moon rise
     {
         /* East Colours */
         { 171, 187, 163, 255 }, // East01
-        { 091, 105, 108, 255 }, // East02
-        { 062, 073, 076, 255 }, // East03
-        { 038, 053, 059, 255 }, // East04
-        { 034, 044, 050, 255 }, // East05
+        { 91, 105, 108, 255 }, // East02
+        { 62, 73, 76, 255 }, // East03
+        { 38, 53, 59, 255 }, // East04
+        { 34, 44, 50, 255 }, // East05
         /* NE and SE Colours */
         { 114, 124, 114, 255 }, // NSEast01
-        { 039, 049, 055, 255 }, // NSEast02
-        { 040, 051, 056, 255 }, // NSEast03
-        { 052, 066, 075, 255 }, // NSEast04
-        { 030, 041, 046, 255 }, // NSEast05
+        { 39, 49, 55, 255 }, // NSEast02
+        { 40, 51, 56, 255 }, // NSEast03
+        { 52, 66, 75, 255 }, // NSEast04
+        { 30, 41, 46, 255 }, // NSEast05
         /* North South Colours */
-        { 097, 105, 100, 255 }, // NS01
-        { 023, 032, 038, 255 }, // NS02
-        { 023, 034, 041, 255 }, // NS03
-        { 052, 069, 084, 255 }, // NS04
-        { 026, 034, 041, 255 }, // NS05
+        { 97, 105, 100, 255 }, // NS01
+        { 23, 32, 38, 255 }, // NS02
+        { 23, 34, 41, 255 }, // NS03
+        { 52, 69, 84, 255 }, // NS04
+        { 26, 34, 41, 255 }, // NS05
         /* NW and SW Colours */
-        { 032, 041, 047, 255 }, // NSWest01
-        { 015, 023, 028, 255 }, // NSWest02
-        { 048, 063, 075, 255 }, // NSWest03
-        { 022, 034, 042, 255 }, // NSWest04
-        { 016, 024, 030, 255 }, // NSWest05
+        { 32, 41, 47, 255 }, // NSWest01
+        { 15, 23, 28, 255 }, // NSWest02
+        { 48, 63, 75, 255 }, // NSWest03
+        { 22, 34, 42, 255 }, // NSWest04
+        { 16, 24, 30, 255 }, // NSWest05
         /* West Colours */
-        { 033, 048, 056, 255 }, // West01
-        { 038, 052, 061, 255 }, // West02
-        { 013, 021, 028, 255 }, // West03
-        { 095, 123, 146, 255 }, // West04
-        { 023, 034, 042, 255 }, // West05
+        { 33, 48, 56, 255 }, // West01
+        { 38, 52, 61, 255 }, // West02
+        { 13, 21, 28, 255 }, // West03
+        { 95, 23, 146, 255 }, // West04
+        { 23, 34, 42, 255 }, // West05
     },
     // STORM_NIGHT_End_SKY_COLOR_SET
 	// East and West swap sides to match the moon's position
     {
         /* East Colours */
-        { 033, 048, 056, 255 }, // East01
-        { 038, 052, 061, 255 }, // East02
-        { 013, 021, 028, 255 }, // East03
-        { 095, 123, 146, 255 }, // East04
-        { 023, 034, 042, 255 }, // East05
+        { 33, 48, 56, 255 }, // East01
+        { 38, 52, 61, 255 }, // East02
+        { 13, 21, 28, 255 }, // East03
+        { 95, 123, 146, 255 }, // East04
+        { 23, 34, 42, 255 }, // East05
         /* NE and SE Colours */
-        { 032, 041, 047, 255 }, // NSEast01
-        { 015, 023, 028, 255 }, // NSEast02
-        { 048, 063, 075, 255 }, // NSEast03
-        { 022, 034, 042, 255 }, // NSEast04
-        { 016, 024, 030, 255 }, // NSEast05
+        { 32, 41, 47, 255 }, // NSEast01
+        { 15, 23, 28, 255 }, // NSEast02
+        { 48, 63, 75, 255 }, // NSEast03
+        { 22, 34, 42, 255 }, // NSEast04
+        { 16, 24, 30, 255 }, // NSEast05
         /* North South Colours */
-        { 097, 105, 100, 255 }, // NS01
-        { 023, 032, 038, 255 }, // NS02
-        { 023, 034, 041, 255 }, // NS03
-        { 052, 069, 084, 255 }, // NS04
-        { 026, 034, 041, 255 }, // NS05
+        { 97, 105, 100, 255 }, // NS01
+        { 23, 32, 38, 255 }, // NS02
+        { 23, 34, 41, 255 }, // NS03
+        { 52, 69, 84, 255 }, // NS04
+        { 26, 34, 41, 255 }, // NS05
         /* NW and SW Colours */
         { 114, 124, 114, 255 }, // NSWest01
-        { 039, 049, 055, 255 }, // NSWest02
-        { 040, 051, 056, 255 }, // NSWest03
-        { 052, 066, 075, 255 }, // NSWest04
-        { 030, 041, 046, 255 }, // NSWest05
+        { 39, 49, 55, 255 }, // NSWest02
+        { 40, 51, 56, 255 }, // NSWest03
+        { 52, 66, 75, 255 }, // NSWest04
+        { 30, 41, 46, 255 }, // NSWest05
         /* West Colours */
         { 171, 187, 163, 255 }, // West01
-        { 091, 105, 108, 255 }, // West02
-        { 062, 073, 076, 255 }, // West03
-        { 038, 053, 059, 255 }, // West04
-        { 034, 044, 050, 255 }, // West05
-    },
-	// MAX_COLOUR_SETS
-    {
-        /* East Colours */
-        { 0, 0, 0, 255 }, // East01
-        { 0, 0, 0, 255 }, // East02
-        { 0, 0, 0, 255 }, // East03
-        { 0, 0, 0, 255 }, // East04
-        { 0, 0, 0, 255 }, // East05
-        /* NE and SE Colours */
-        { 0, 0, 0, 255 }, // NSEast01
-        { 0, 0, 0, 255 }, // NSEast02
-        { 0, 0, 0, 255 }, // NSEast03
-        { 0, 0, 0, 255 }, // NSEast04
-        { 0, 0, 0, 255 }, // NSEast05
-        /* North South Colours */
-        { 0, 0, 0, 255 }, // NS01
-        { 0, 0, 0, 255 }, // NS02
-        { 0, 0, 0, 255 }, // NS03
-        { 0, 0, 0, 255 }, // NS04
-        { 0, 0, 0, 255 }, // NS05
-        /* NW and SW Colours */
-        { 0, 0, 0, 255 }, // NSWest01
-        { 0, 0, 0, 255 }, // NSWest02
-        { 0, 0, 0, 255 }, // NSWest03
-        { 0, 0, 0, 255 }, // NSWest04
-        { 0, 0, 0, 255 }, // NSWest05
-        /* West Colours */
-        { 0, 0, 0, 255 }, // West01
-        { 0, 0, 0, 255 }, // West02
-        { 0, 0, 0, 255 }, // West03
-        { 0, 0, 0, 255 }, // West04
-        { 0, 0, 0, 255 }, // West05
+        { 91, 105, 108, 255 }, // West02
+        { 62, 73, 76, 255 }, // West03
+        { 38, 53, 59, 255 }, // West04
+        { 34, 44, 50, 255 }, // West05
     }
 };
 
@@ -631,7 +598,70 @@ u64 tex_storm_clouds_ia8[] = {
 	
 };
 
-u64 tex_sky_blank_i8[] = {
+u64 tex_sky_noise_i4[] = {
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
 	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
 	
 };
@@ -1436,85 +1466,53 @@ Gfx tri_sky_storm_sunset[] = {
 #pragma region Variables
 
 // fine cloud colours
-Color_RGBA8 fineCloudsSunrisePrimColor[] =
-{
-    {244, 244, 244, 178}
-}
-Color_RGBA8 fineCloudsSunriseEnvColor[] =
-{
-    {200, 190, 255, 255}
-}
+Color_RGBA8 fineCloudsSunrisePrimColor = {244, 244, 244, 178};
+
+Color_RGBA8 fineCloudsSunriseEnvColor = {200, 190, 255, 255};
+
 
 //
-Color_RGBA8 fineCloudsDayPrimColor[] =
-{
-    {206, 254, 255, 179}
-}
-Color_RGBA8 fineCloudsDayEnvColor[] =
-{
-    {247, 213, 217, 255}
-}
+Color_RGBA8 fineCloudsDayPrimColor = {206, 254, 255, 179};
+
+Color_RGBA8 fineCloudsDayEnvColor = {247, 213, 217, 255};
+
 
 //
-Color_RGBA8 fineCloudsSunsetPrimColor[] =
-{
-    {169, 169, 169, 210}
-}
-Color_RGBA8 fineCloudsSunsetEnvColor[] =
-{
-    {186, 101, 40, 255}
-}
+Color_RGBA8 fineCloudsSunsetPrimColor = {169, 169, 169, 210};
+
+Color_RGBA8 fineCloudsSunsetEnvColor =  {186, 101, 40, 255};
+
 
 //
-Color_RGBA8 fineCloudsNightPrimColor[] =
-{
-    {116, 135, 134, 104}
-}
-Color_RGBA8 fineCloudsNightEnvColor[] =
-{
-    {64, 60, 63, 255}
-}
+Color_RGBA8 fineCloudsNightPrimColor = {116, 135, 134, 104};
+
+Color_RGBA8 fineCloudsNightEnvColor = {64, 60, 63, 255};
+
 
 
 // storm cloud colours
-Color_RGBA8 stormCloudsSunrisePrimColor[] =
-{
-    {184, 114, 91, 169}
-}
-Color_RGBA8 stormCloudsSunriseEnvColor[] =
-{
-    {70, 70, 88, 255}
-}
+Color_RGBA8 stormCloudsSunrisePrimColor = {184, 114, 91, 169};
+
+Color_RGBA8 stormCloudsSunriseEnvColor = {70, 70, 88, 255};
+
 
 //
-Color_RGBA8 stormCloudsDayPrimColor[] =
-{
-    {170, 198, 196, 102}
-}
-Color_RGBA8 stormCloudsDayEnvColor[] =
-{
-    {90, 66, 70, 255}
-}
+Color_RGBA8 stormCloudsDayPrimColor = {170, 198, 196, 102};
+
+Color_RGBA8 stormCloudsDayEnvColor =  {90, 66, 70, 255};
+
 
 //
-Color_RGBA8 stormCloudsSunsetPrimColor[] =
-{
-    {239, 186, 118, 132}
-}
-Color_RGBA8 stormCloudsSunsetEnvColor[] =
-{
-    {93, 61, 44, 255}
-}
+Color_RGBA8 stormCloudsSunsetPrimColor = {239, 186, 118, 132};
+
+Color_RGBA8 stormCloudsSunsetEnvColor = {93, 61, 44, 255};
+
 
 //
-Color_RGBA8 stormCloudsNightPrimColor[] =
-{
-    {116, 135, 134, 104}
-}
-Color_RGBA8 stormCloudsNightEnvColor[] =
-{
-    {64, 60, 63, 255}
-}
+Color_RGBA8 stormCloudsNightPrimColor = {116, 135, 134, 104};
+
+Color_RGBA8 stormCloudsNightEnvColor = {64, 60, 63, 255};
+
 
 #pragma endregion Variables
 
@@ -1533,7 +1531,7 @@ Gfx mat_fine_clouds_XLU[] = {
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPSetPrimColor(0, 0, 255, 255, 255, 128),
 	gsDPSetEnvColor(128, 128, 128, 255),
-	gsDPSetTextureImage(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_clear_clouds_ia8),
+	gsDPSetTextureImage(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_fine_clouds_ia8),
 	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 2047, 256),
 	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 1, G_TX_WRAP | G_TX_NOMIRROR, 6, 1),
@@ -1571,7 +1569,7 @@ Gfx mat_sky_fine_day_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1586,7 +1584,7 @@ Gfx mat_sky_fine_night_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1601,7 +1599,7 @@ Gfx mat_sky_fine_sunrise_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1616,7 +1614,7 @@ Gfx mat_sky_fine_sunset_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1633,7 +1631,7 @@ Gfx mat_sky_storm_day_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1648,7 +1646,7 @@ Gfx mat_sky_storm_night_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1663,7 +1661,7 @@ Gfx mat_sky_storm_sunrise_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1678,7 +1676,7 @@ Gfx mat_sky_storm_sunset_OPA[] = {
 	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
 	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
 	gsSPTexture(65535, 65535, 0, 0, 1),
-	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_blank_i8),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, tex_sky_noise_i4),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadBlock(7, 0, 0, 31, 2048),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 1, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0, G_TX_WRAP | G_TX_NOMIRROR, 3, 0),
@@ -1799,3 +1797,154 @@ Gfx DL_sky_storm_sunset_OPA[] = {
 };
 
 #pragma endregion DisplayLists
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+u64 Skybox_Dome_North_DL_tex_sky_noise_i4[] = {
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 0xffffffffffffffff, 
+	
+};
+
+Vtx Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_vtx_cull[8] = {
+	{{ {-45, -64, -64}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-45, -64, -45}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-45, 64, -45}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-45, 64, -64}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {45, -64, -64}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {45, -64, -45}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {45, 64, -45}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {45, 64, -64}, 0, {0, 0}, {0, 0, 0, 0} }},
+};
+
+Vtx Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_vtx_0[15] = {
+	{{ {45, -64, -45}, 0, {4080, 5063}, {0, 11, 0, 255} }},
+	{{ {45, -10, -45}, 0, {4080, 2917}, {0, 22, 0, 255} }},
+	{{ {0, -64, -64}, 0, {6128, 5063}, {0, 0, 11, 255} }},
+	{{ {0, -10, -64}, 0, {6128, 2917}, {0, 0, 22, 255} }},
+	{{ {45, 0, -45}, 0, {4080, 2502}, {0, 33, 0, 255} }},
+	{{ {0, 0, -64}, 0, {6128, 2502}, {0, 0, 33, 255} }},
+	{{ {45, 10, -45}, 0, {4080, 2137}, {0, 44, 0, 255} }},
+	{{ {0, 10, -64}, 0, {6128, 2137}, {0, 0, 44, 255} }},
+	{{ {45, 64, -45}, 0, {4080, -1121}, {0, 55, 0, 255} }},
+	{{ {0, 64, -64}, 0, {6128, -1121}, {0, 0, 55, 255} }},
+	{{ {-45, 64, -45}, 0, {8176, -1121}, {0, 160, 0, 255} }},
+	{{ {-45, 10, -45}, 0, {8176, 2137}, {0, 150, 0, 255} }},
+	{{ {-45, 0, -45}, 0, {8176, 2502}, {0, 140, 0, 255} }},
+	{{ {-45, -10, -45}, 0, {8176, 2917}, {0, 130, 0, 255} }},
+	{{ {-45, -64, -45}, 0, {8176, 5063}, {0, 120, 0, 255} }},
+};
+
+Gfx Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_tri_0[] = {
+	gsSPVertex(Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_vtx_0 + 0, 15, 0),
+	gsSP2Triangles(0, 1, 2, 0, 2, 1, 3, 0),
+	gsSP2Triangles(1, 4, 3, 0, 3, 4, 5, 0),
+	gsSP2Triangles(4, 6, 5, 0, 5, 6, 7, 0),
+	gsSP2Triangles(8, 7, 6, 0, 7, 8, 9, 0),
+	gsSP2Triangles(10, 7, 9, 0, 11, 7, 10, 0),
+	gsSP2Triangles(5, 7, 11, 0, 11, 12, 5, 0),
+	gsSP2Triangles(12, 13, 5, 0, 5, 13, 3, 0),
+	gsSP2Triangles(13, 2, 3, 0, 2, 13, 14, 0),
+	gsSPEndDisplayList(),
+};
+
+Gfx mat_Skybox_Dome_North_DL_f3dlite_material_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_SHADE | G_CULL_BACK | G_FOG | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, 1, TEXEL0, 0, SHADE, 0, 0, 0, 0, 1),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_1CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | AA_EN | IM_RD | CVG_DST_CLAMP | ZMODE_OPA | ALPHA_CVG_SEL | GBL_c1(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM) | GBL_c2(G_BL_CLR_IN, G_BL_A_IN, G_BL_CLR_MEM, G_BL_A_MEM)),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_16b, 1, Skybox_Dome_North_DL_tex_sky_noise_i4),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_16b, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
+	gsDPLoadBlock(7, 0, 0, 2047, 512),
+	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_4b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
+	gsDPSetTileSize(0, 0, 0, 252, 508),
+	gsSPEndDisplayList(),
+};
+
+Gfx Skybox_Dome_North_DL[] = {
+	gsSPClearGeometryMode(G_LIGHTING),
+	gsSPVertex(Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
+	gsSPSetGeometryMode(G_LIGHTING),
+	gsSPCullDisplayList(0, 7),
+	gsSPDisplayList(mat_Skybox_Dome_North_DL_f3dlite_material_layerOpaque),
+	gsSPDisplayList(Skybox_Dome_North_DL_Skybox_Dome_North_DL_mesh_layer_Opaque_tri_0),
+	gsSPEndDisplayList(),
+};

@@ -18,7 +18,7 @@ Mtx* Skybox_UpdateMatrix(SkyboxContext* skyboxCtx, f32 x, f32 y, f32 z) {
 void Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 skyboxId, s16 blend, f32 x, f32 y, f32 z) {
     if (skyboxCtx->drawType == SKYBOX_DRAW_MDTA){
         // Intercept skybox code to run my own code...
-        Mdta_Skybox_Draw();
+        Mdta_Skybox_Draw(skyboxCtx, gfxCtx, blend, x, y, z);
     }
     else {
         OPEN_DISPS(gfxCtx, "../z_vr_box_draw.c", 52);
@@ -108,6 +108,6 @@ void Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 skyboxId
 
 void Skybox_Update(SkyboxContext* skyboxCtx) {
     if(skyboxCtx->drawType == SKYBOX_DRAW_MDTA){
-        Mdta_Skybox_Update();
+        Mdta_Skybox_Update(skyboxCtx);
     }    
 }

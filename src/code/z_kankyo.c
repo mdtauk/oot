@@ -692,7 +692,7 @@ void Environment_UpdateSkybox(u8 skyboxId, EnvironmentContext* envCtx, SkyboxCon
                 break;
             }
         }
-    } else if (skyboxId == SKYBOX_NORMAL_SKY || skyboxId == SKYBOX_MDTA && !envCtx->skyboxDisabled) {
+    } else if ((skyboxId == SKYBOX_NORMAL_SKY || skyboxId == SKYBOX_MDTA) && !envCtx->skyboxDisabled) {
         for (i = 0; i < ARRAY_COUNT(gTimeBasedSkyboxConfigs[envCtx->skyboxConfig]); i++) {
             if (gSaveContext.skyboxTime >= gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].startTime &&
                 (gSaveContext.skyboxTime < gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].endTime ||

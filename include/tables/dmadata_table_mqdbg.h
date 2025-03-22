@@ -1009,6 +1009,7 @@ DEFINE_DMA_ENTRY(vr_LBVR_pal_static, "vr_LBVR_pal_static")
 DEFINE_DMA_ENTRY(vr_TTVR_static, "vr_TTVR_static")
 DEFINE_DMA_ENTRY(vr_TTVR_pal_static, "vr_TTVR_pal_static")
 DEFINE_DMA_ENTRY(vr_FCVR_static, "vr_FCVR_static")
+DEFINE_DMA_ENTRY(mdta_object_skybox, "mdta_object_skybox") // MDTA
 DEFINE_DMA_ENTRY(vr_FCVR_pal_static, "vr_FCVR_pal_static")
 DEFINE_DMA_ENTRY(elf_message_field, "elf_message_field")
 DEFINE_DMA_ENTRY(elf_message_ydan, "elf_message_ydan")

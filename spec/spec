@@ -4051,17 +4051,6 @@ beginseg
     number 6
 endseg
 
-/*
-    MDTA Objects
-*/
-beginseg
-    name "mdta_object_skybox"
-    compress
-    romalign 0x1000
-    include "$(BUILD_DIR)/assets/mdta/objects/mdta_obj_skybox/mdta_obj_skybox.o"
-    number 6
-endseg
-
 beginseg
     name "g_pn_01"
     compress

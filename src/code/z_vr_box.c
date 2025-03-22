@@ -1021,8 +1021,7 @@ void Skybox_Setup(PlayState* play, SkyboxContext* skyboxCtx, s16 skyboxId) {
         case SKYBOX_MDTA:
             skyboxCtx->drawType = SKYBOX_DRAW_MDTA;
             // Run code to setup my own skybox
-            Mdta_Skybox_Setup(&play->state, play->envCtx.skyboxConfig, play->envCtx.skybox1Index, 
-                              play->envCtx.skybox2Index, play->envCtx.skyboxBlend);
+            Mdta_Skybox_Setup(skyboxCtx, &(play->envCtx));
             break;
     }
 }
@@ -1044,7 +1043,7 @@ void Skybox_Init(GameState* state, SkyboxContext* skyboxCtx, s16 skyboxId) {
 
         if (skyboxId == SKYBOX_MDTA) {
             // Init my skybox
-            Mdta_Skybox_Init(state, skyboxCtx, skyboxId);
+            Mdta_Skybox_Init(skyboxCtx, skyboxId);
         } 
 
         if (skyboxCtx->drawType != SKYBOX_DRAW_128) {

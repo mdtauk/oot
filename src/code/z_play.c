@@ -1045,7 +1045,7 @@ void Play_Update(PlayState* this) {
             }
 
             PLAY_LOG(3708);
-            Skybox_Update(&this->skyboxCtx);
+            Skybox_Update(&this->skyboxCtx, &this->envCtx);
 
             PLAY_LOG(3716);
 

@@ -3,6 +3,7 @@
 
 #include "ultra64/ultratypes.h"
 #include "ultra64/gbi.h"
+#include "z64environment.h"
 
 #include "z64math.h"
 #include "z64dma.h" // for RomFile
@@ -79,6 +80,6 @@ void Skybox_Init(struct GameState* state, SkyboxContext* skyboxCtx, s16 skyboxId
 Mtx* Skybox_UpdateMatrix(SkyboxContext* skyboxCtx, f32 x, f32 y, f32 z);
 void Skybox_Draw(SkyboxContext* skyboxCtx, struct GraphicsContext* gfxCtx, s16 skyboxId, s16 blend, f32 x, f32 y,
                  f32 z);
-void Skybox_Update(SkyboxContext* skyboxCtx);
+void Skybox_Update(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx);
 
 #endif

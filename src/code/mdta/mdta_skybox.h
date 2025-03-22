@@ -7,15 +7,21 @@
 #ifndef MDTA_SKYBOX_H
 #define MDTA_SKYBOX_H 1
 
-#include "ultra64/ultratypes.h"
-#include "ultra64/gbi.h"
+#include "../include/ultra64.h"
+#include "../include/ultra64/gbi.h"
+#include "../include/ultra64/ultratypes.h"
+#include "z64environment.h"
+#include "color.h"
 #include "z64math.h"
 #include "z64save.h"
 #include "z64skybox.h"
-#include "assets/mdta/objects/mdta_obj_skybox/mdta_obj_skybox.h"
+#include "z64dma.h" // for RomFile
 
 struct GameState;
 struct GraphicsContext;
+extern EnvironmentContext* sMdtaSkyboxEnvCtx;
+
+#define NUM_COLORS 25
 
 typedef enum SkyboxMode {
     /* 0 */ SKYBOX_MODE_SUNRISE,
@@ -31,32 +37,74 @@ typedef enum SkyboxWeather {
     /* 2 */ SKYBOX_WEATHER_MAX
 } SkyboxWeather;
 
-
-typedef struct MdtaSkyboxContext {
-    Gfx (*dListBuf)[150];
-    Gfx* gfx;
-    Vtx* roomVtx;
-} MdtaSkyboxContext;
-
-//Color_RGBA8 colorSets[MAX_COLOUR_SETS][NUM_COLORS];
-Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, float t);
-
-void MDTA_Skybox_CalculateDisplayLists(s16 nFaces);
-
-
-//void initializeColorSetsFromArrays(Color_RGBA8 predefinedSets[MAX_COLOUR_SETS][NUM_COLORS]);
-//Color_RGBA8 currentFrameColorSet[NUM_COLORS];  // Array for current frame's vertex colors
-void lerpColorSet(Color_RGBA8 sourceSet[NUM_COLORS], Color_RGBA8 targetSet[NUM_COLORS], Color_RGBA8 resultSet[NUM_COLORS], float t);
-
-//void updateCurrentFrameColorSet(u8 set1, u8 set2, float t);
+typedef enum ColorSetTypes{
+    /* 00 */ INITIAL_COLOR_SET,
+    /* 01 */ FINE_SUNRISE_SKY_COLOR_SET,
+    /* 02 */ FINE_DAY_START_SKY_COLOR_SET,
+    /* 03 */ FINE_DAY_END_SKY_COLOR_SET,
+    /* 04 */ FINE_SUNSET_SKY_COLOR_SET,
+    /* 05 */ FINE_NIGHT_START_SKY_COLOR_SET,
+    /* 06 */ FINE_NIGHT_END_SKY_COLOR_SET,
+    /* 07 */ STORM_SUNRISE_SKY_COLOR_SET,
+    /* 08 */ STORM_DAY_START_SKY_COLOR_SET,
+    /* 09 */ STORM_DAY_END_SKY_COLOR_SET,
+    /* 10 */ STORM_SUNSET_SKY_COLOR_SET,
+    /* 11 */ STORM_NIGHT_START_SKY_COLOR_SET,
+    /* 12 */ STORM_NIGHT_END_SKY_COLOR_SET,
+    /* 13 */ MAX_COLOUR_SETS
+} ColorSetTypes;
 
 
+typedef struct ColorSet {
+    Color_RGBA8 colorSetColors[NUM_COLORS];
+} ColorSet;
 
-Mtx* Mdta_Skybox_UpdateMatrix(SkyboxContext* skyboxCtx, f32 x, f32 y, f32 z);
+typedef struct ColorSetGroup {
+    ColorSet groupOfColorSets[MAX_COLOUR_SETS];
+} ColorSetGroup;
 
-void Mdta_Skybox_Setup(GameState* state, SkyboxWeather skyboxWeatherConfig, SkyboxMode skyboxModeCurrent, SkyboxMode skyboxModeNext, u8 blend);
-void Mdta_Skybox_Init(GameState* state, SkyboxContext* skyboxCtx, s16 skyboxId);
-void Mdta_Skybox_Draw(SkyboxContext* skyboxCtx, struct GraphicsContext* gfxCtx, s16 blend, f32 x, f32 y, f32 z);
-void Mdta_Skybox_Update(SkyboxContext* skyboxCtx);
 
-#endif
+extern ColorSet initial_colorset;
+
+// Fine Weather Color Sets
+extern ColorSet fine_sunrise_sky_colorset;
+extern ColorSet fine_day_start_sky_colorset;
+extern ColorSet fine_day_end_sky_colorset;
+extern ColorSet fine_sunset_sky_colorset;
+extern ColorSet fine_night_start_sky_colorset;
+extern ColorSet fine_night_end_sky_colorset;
+// Storm Weather Color Sets
+extern ColorSet storm_sunrise_sky_colorset;
+extern ColorSet storm_day_start_sky_colorset;
+extern ColorSet storm_day_end_sky_colorset;
+extern ColorSet storm_sunset_sky_colorset;
+extern ColorSet storm_night_start_sky_colorset;
+extern ColorSet storm_night_end_sky_colorset;
+
+// All colour sets
+extern ColorSetGroup predefinedColorSets;
+extern ColorSet currentFrameColorSet;  // ColorSet for current frame's vertex colors
+
+
+extern RomFile mdtaSkyboxFile;
+
+
+
+extern void MDTA_Skybox_CalculateDisplayLists();
+
+
+extern ColorSetGroup Populate_ColorSets();
+//extern ColorSet lerpColorSet(ColorSet sourceSet, ColorSet targetSet, float t);
+extern Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, float t);
+extern void updateCurrentFrameColorSet(ColorSet set1, ColorSet set2, float t);
+
+
+
+extern Mtx* Mdta_Skybox_UpdateMatrix(SkyboxContext* skyboxCtx, f32 x, f32 y, f32 z);
+
+extern void Mdta_Skybox_Setup(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx);
+extern void Mdta_Skybox_Init(SkyboxContext* skyboxCtx, s16 skyboxId);
+extern void Mdta_Skybox_Draw(SkyboxContext* skyboxCtx, struct GraphicsContext* gfxCtx, s16 blend, f32 x, f32 y, f32 z);
+extern void Mdta_Skybox_Update(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx);
+
+#endif // MDTA_SKYBOX_H

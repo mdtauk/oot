@@ -28,6 +28,7 @@
 #include "z64play.h"
 #include "z64player.h"
 #include "z64save.h"
+#include "mdta/mdta_skybox.h"
 
 #include "assets/objects/gameplay_keep/gameplay_keep.h"
 #include "assets/objects/gameplay_field_keep/gameplay_field_keep.h"
@@ -693,27 +694,30 @@ void Environment_UpdateSkybox(u8 skyboxId, EnvironmentContext* envCtx, SkyboxCon
             }
         }
     } else if ((skyboxId == SKYBOX_NORMAL_SKY || skyboxId == SKYBOX_MDTA) && !envCtx->skyboxDisabled) {
+        // for as many time-based skybox configs as there are
         for (i = 0; i < ARRAY_COUNT(gTimeBasedSkyboxConfigs[envCtx->skyboxConfig]); i++) {
+            // if the current time is within the start and end times of the current time-based skybox config
             if (gSaveContext.skyboxTime >= gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].startTime &&
                 (gSaveContext.skyboxTime < gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].endTime ||
                  gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].endTime == 0xFFFF)) {
+                    // set the new skybox 1 and 2 index and set the skybox is changing flag
                 newSkybox1Index = gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].skybox1Index;
                 newSkybox2Index = gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].skybox2Index;
                 gSkyboxIsChanging = gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].changeSkybox;
 
+                // if the skybox is changing
                 if (gSkyboxIsChanging) {
                     skyboxBlend = Environment_LerpWeight(gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].endTime,
                                                          gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].startTime,
-                                                         ((void)0, gSaveContext.skyboxTime)) *
-                                  255;
+                                                         ((void)0, gSaveContext.skyboxTime)) * 255;
                 } else {
                     skyboxBlend = Environment_LerpWeight(gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].endTime,
                                                          gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].startTime,
-                                                         ((void)0, gSaveContext.skyboxTime)) *
-                                  255;
+                                                         ((void)0, gSaveContext.skyboxTime)) * 255;
 
                     skyboxBlend = (skyboxBlend < 128) ? 255 : 0;
-
+                    
+                    // if skybox state is not inactive and less than active
                     if ((envCtx->changeSkyboxState != CHANGE_SKYBOX_INACTIVE) &&
                         (envCtx->changeSkyboxState < CHANGE_SKYBOX_ACTIVE)) {
                         envCtx->changeSkyboxState++;
@@ -726,13 +730,17 @@ void Environment_UpdateSkybox(u8 skyboxId, EnvironmentContext* envCtx, SkyboxCon
 
         Environment_UpdateStorm(envCtx, skyboxBlend);
 
+        // if the skybox state is greater than or equal to active
         if (envCtx->changeSkyboxState >= CHANGE_SKYBOX_ACTIVE) {
             newSkybox1Index = gTimeBasedSkyboxConfigs[envCtx->skyboxConfig][i].skybox1Index;
             newSkybox2Index = gTimeBasedSkyboxConfigs[envCtx->changeSkyboxNextConfig][i].skybox2Index;
 
+            // skybox blend value is the change duration minus the change skybox timer divided by the change duration times 255
             skyboxBlend = ((f32)envCtx->changeDuration - envCtx->changeSkyboxTimer) / (f32)envCtx->changeDuration * 255;
             envCtx->changeSkyboxTimer--;
 
+            // if the change skybox timer is less than or equal to 0
+            // set the change skybox state to inactive and set the skybox config to the next skybox config
             if (envCtx->changeSkyboxTimer <= 0) {
                 envCtx->changeSkyboxState = CHANGE_SKYBOX_INACTIVE;
                 envCtx->skyboxConfig = envCtx->changeSkyboxNextConfig;
@@ -771,6 +779,9 @@ void Environment_UpdateSkybox(u8 skyboxId, EnvironmentContext* envCtx, SkyboxCon
         if (envCtx->skyboxDmaState == SKYBOX_DMA_TEXTURE1_DONE) {
             envCtx->skyboxDmaState = SKYBOX_DMA_TLUT1_START;
 
+            // Check if the least significant bit (LSB) of newSkybox1Index differs
+            // from the 3rd bit (shifted into the LSB position). The condition returns
+            // true if they are different, and false if they are the same.
             if ((newSkybox1Index & 1) ^ ((newSkybox1Index & 4) >> 2)) {
                 size = gNormalSkyFiles[newSkybox1Index].palette.vromEnd -
                        gNormalSkyFiles[newSkybox1Index].palette.vromStart;
@@ -822,6 +833,10 @@ void Environment_UpdateSkybox(u8 skyboxId, EnvironmentContext* envCtx, SkyboxCon
         }
 
         envCtx->skyboxBlend = skyboxBlend;
+        if (skyboxId == SKYBOX_MDTA)
+        {
+            //mdtaSkyboxCfg->skyboxBlend = skyboxBlend;
+        }
     }
 }
 

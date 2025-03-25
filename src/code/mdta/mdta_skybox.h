@@ -24,18 +24,16 @@ extern EnvironmentContext* sMdtaSkyboxEnvCtx;
 #define NUM_COLORS 25
 
 typedef enum SkyboxMode {
-    /* 0 */ SKYBOX_MODE_SUNRISE,
-    /* 1 */ SKYBOX_MODE_DAY,
-    /* 2 */ SKYBOX_MODE_SUNSET,
-    /* 3 */ SKYBOX_MODE_NIGHT,
-    /* 4 */ SKYBOX_MODE_MAX
+    /* 0 */ SKYBOX_MODE_FINE_SUNRISE,
+    /* 1 */ SKYBOX_MODE_FINE_DAY,
+    /* 2 */ SKYBOX_MODE_FINE_SUNSET,
+    /* 3 */ SKYBOX_MODE_FINE_NIGHT,
+    /* 4 */ SKYBOX_MODE_STORM_SUNRISE,
+    /* 5 */ SKYBOX_MODE_STORM_DAY,
+    /* 6 */ SKYBOX_MODE_STORM_SUNSET,
+    /* 7 */ SKYBOX_MODE_STORM_NIGHT,
+    /* 8 */ SKYBOX_MODE_MAX
 } SkyboxMode;
-
-typedef enum SkyboxWeather {
-    /* 0 */ SKYBOX_WEATHER_FINE,
-    /* 1 */ SKYBOX_WEATHER_STORM,
-    /* 2 */ SKYBOX_WEATHER_MAX
-} SkyboxWeather;
 
 typedef enum ColorSetTypes{
     /* 00 */ INITIAL_COLOR_SET,
@@ -62,6 +60,13 @@ typedef struct ColorSet {
 typedef struct ColorSetGroup {
     ColorSet groupOfColorSets[MAX_COLOUR_SETS];
 } ColorSetGroup;
+
+typedef struct MdtaSkyboxConfig {
+    SkyboxMode currentMode;
+    SkyboxMode nextMode;
+    s16 mdtaSkyboxBlend;
+    bool mdtaSkyboxIsChanging;
+} MdtaSkyboxConfig;
 
 
 extern ColorSet initial_colorset;
@@ -90,7 +95,8 @@ extern RomFile mdtaSkyboxFile;
 
 
 
-extern void MDTA_Skybox_CalculateDisplayLists();
+extern void Mdta_Skybox_CalculateDisplayLists();
+extern void Mdta_Skybox_Debug(EnvironmentContext* envCtx);
 
 
 extern ColorSetGroup Populate_ColorSets();

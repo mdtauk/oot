@@ -1021,7 +1021,7 @@ void Skybox_Setup(PlayState* play, SkyboxContext* skyboxCtx, s16 skyboxId) {
         case SKYBOX_MDTA:
             skyboxCtx->drawType = SKYBOX_DRAW_MDTA;
             // Run code to setup my own skybox
-            Mdta_Skybox_Setup(skyboxCtx, &(play->envCtx));
+            Mdta_Skybox_Setup(skyboxCtx, &play->envCtx);
             break;
     }
 }

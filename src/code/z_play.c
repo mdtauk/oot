@@ -1045,7 +1045,10 @@ void Play_Update(PlayState* this) {
             }
 
             PLAY_LOG(3708);
-            Skybox_Update(&this->skyboxCtx, &this->envCtx);
+            Skybox_Update(&this->skyboxCtx);
+            if (this->skyboxId == SKYBOX_MDTA) {
+                Mdta_Skybox_Update(&this->skyboxCtx, &this->envCtx);
+            }
 
             PLAY_LOG(3716);
 
@@ -1254,10 +1257,14 @@ void Play_Draw(PlayState* this) {
 
         if (!DEBUG_FEATURES || (R_HREG_MODE != HREG_MODE_PLAY) || R_PLAY_DRAW_SKYBOX) {
             if (this->skyboxId && (this->skyboxId != SKYBOX_UNSET_1D) && !this->envCtx.skyboxDisabled) {
-                if ((this->skyboxId == SKYBOX_NORMAL_SKY) || (this->skyboxId == SKYBOX_CUTSCENE_MAP)) {
+                if ((this->skyboxId == SKYBOX_NORMAL_SKY) || (this->skyboxId == SKYBOX_MDTA) || (this->skyboxId == SKYBOX_CUTSCENE_MAP)) {
                     Environment_UpdateSkybox(this->skyboxId, &this->envCtx, &this->skyboxCtx);
                     Skybox_Draw(&this->skyboxCtx, gfxCtx, this->skyboxId, this->envCtx.skyboxBlend, this->view.eye.x,
                                 this->view.eye.y, this->view.eye.z);
+                    if (this->skyboxId == SKYBOX_MDTA) {
+                        Mdta_Skybox_Draw(&this->skyboxCtx, gfxCtx, this->envCtx.skyboxBlend, this->view.eye.x,
+                                this->view.eye.y, this->view.eye.z);
+                    }
                 } else if (this->skyboxCtx.drawType == SKYBOX_DRAW_128) {
                     Skybox_Draw(&this->skyboxCtx, gfxCtx, this->skyboxId, 0, this->view.eye.x, this->view.eye.y,
                                 this->view.eye.z);
@@ -1399,9 +1406,9 @@ Play_Draw_skip:
         this->view.unk_124 = 0;
         if (this->skyboxId && (this->skyboxId != SKYBOX_UNSET_1D) && !this->envCtx.skyboxDisabled) {
             Skybox_UpdateMatrix(&this->skyboxCtx, this->view.eye.x, this->view.eye.y, this->view.eye.z);
-        }
-        if (this->skyboxId && (this->skyboxId == SKYBOX_MDTA) && !this->envCtx.skyboxDisabled) {
-            Mdta_Skybox_UpdateMatrix(&this->skyboxCtx, this->view.eye.x, this->view.eye.y, this->view.eye.z);
+            if (this->skyboxId == SKYBOX_MDTA) {
+                Mdta_Skybox_UpdateMatrix(&this->skyboxCtx, this->view.eye.x, this->view.eye.y, this->view.eye.z);
+            }
         }
     }
 

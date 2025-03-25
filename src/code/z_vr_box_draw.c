@@ -106,8 +106,5 @@ void Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 skyboxId
     }
 }
 
-void Skybox_Update(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx) {
-    if(skyboxCtx->drawType == SKYBOX_DRAW_MDTA){
-        Mdta_Skybox_Update(skyboxCtx, envCtx);
-    }    
+void Skybox_Update(SkyboxContext* skyboxCtx) {
 }

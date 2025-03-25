@@ -23,6 +23,8 @@
 
 Mtx* sMdtaSkyboxDrawMatrix;
 EnvironmentContext* sMdtaSkyboxEnvCtx;
+MdtaSkyboxConfig mdtaSkyboxCfg;
+
 
 ColorSetGroup predefinedColorSets;
 
@@ -560,19 +562,57 @@ Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, float t) {
 
 
 
-void Mdta_Skybox_Setup(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx){
-    sMdtaSkyboxEnvCtx = envCtx;
+extern void Mdta_Skybox_Debug(EnvironmentContext* envCtx)
+{
+    // assign values to the mdta skybox config
+    mdtaSkyboxCfg.currentMode = envCtx->skybox1Index;
+    mdtaSkyboxCfg.nextMode = envCtx->skybox2Index;
+    mdtaSkyboxCfg.mdtaSkyboxBlend = envCtx->skyboxBlend;
+    mdtaSkyboxCfg.mdtaSkyboxIsChanging = gSkyboxIsChanging;
 
-    // Setup the skybox
-    PRINTF("MDTA Skybox Setup\n Weather: %d\n Current Mode: %d\n Next Mode: %d\n Blend: %d\n", sMdtaSkyboxEnvCtx->skyboxConfig, sMdtaSkyboxEnvCtx->skybox1Index, sMdtaSkyboxEnvCtx->skybox2Index, sMdtaSkyboxEnvCtx->skyboxBlend);
+    // format the game time into hours and minutes
+    u8 timeHour;
+    s16 timeMinute;
 
-    // Calculate the 6 sides of the skybox/dome
-    MDTA_Skybox_CalculateDisplayLists();
+    timeHour = (u8)(24 * 60 / (f32)0x10000 * ((void)0, gSaveContext.skyboxTime) / 60.0f);
+    timeMinute = (s16)(24 * 60 / (f32)0x10000 * ((void)0, gSaveContext.skyboxTime)) % 60;
+
+    // format the game time into hours and minutes
+    PRINTF("Current Mode: %d \n Next Mode: %d \n Blend: %d \n Skybox Time: %d \n", envCtx->skybox1Index, envCtx->skybox2Index, mdtaSkyboxCfg.mdtaSkyboxBlend, gSaveContext.save.dayTime );
+    PRINTF(VT_COL(WHITE, BLACK));
+    PRINTF("Skybox Time: %d:%d \n", timeHour, timeMinute);
+    PRINTF_RST();
+
+    if (mdtaSkyboxCfg.mdtaSkyboxIsChanging == false)
+    {
+        PRINTF("Skybox is not changing \n");
+    }    
+    else
+    {
+        PRINTF("Skybox is changing \n");
+    }
 }
 
 
 
-void MDTA_Skybox_CalculateDisplayLists(){
+
+void Mdta_Skybox_Setup(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx){
+
+    PRINTF_COLOR_MAGENTA();
+    PRINTF("MDTA Skybox Setup start \n");
+    
+    Mdta_Skybox_Debug(envCtx);
+
+    // Calculate the 6 sides of the skybox/dome
+    Mdta_Skybox_CalculateDisplayLists();
+    
+    PRINTF("MDTA Skybox Setup end \n");
+    PRINTF_RST();
+}
+
+
+
+void Mdta_Skybox_CalculateDisplayLists(){
     // Calculate the display lists for the skybox
     PRINTF("MDTA Skybox Calculate Start\n");
 
@@ -584,12 +624,13 @@ void MDTA_Skybox_CalculateDisplayLists(){
 
 
 void Mdta_Skybox_Init(SkyboxContext* skyboxCtx, s16 skyboxId){
-    // Initialise the skybox
+    
+    PRINTF_COLOR_BLUE();
+    PRINTF("MDTA Skybox Initialise start\n");
+
     u32 size;
     u8 i;
-    u8 j;
-    
-    PRINTF("MDTA Skybox Initialise begin\n");
+    u8 j;    
     
     predefinedColorSets = Populate_ColorSets();
 
@@ -605,17 +646,8 @@ void Mdta_Skybox_Init(SkyboxContext* skyboxCtx, s16 skyboxId){
         }
     }
     
-
-
-    //skyboxCtx->gfx = GAME_STATE_ALLOC(state, size, "../mdta/mdta_skybox.c", 65);
-    //ASSERT(skyboxCtx->gfx != NULL, "mdta_skybox->mdta_skybox_gfx != NULL", "../mdta/mdta_skybox.c", 67);
-//
-    //if (skyboxCtx->gfx != NULL)
-    //{
-    //    PRINTF("skybox context gfx is not null:\n %d \n size:%d", skyboxCtx->gfx, size);
-    //}
-    
-     PRINTF("MDTA Skybox Initialise end\n");
+    PRINTF("MDTA Skybox Initialise end\n");
+    PRINTF_RST();
 }
 
 
@@ -623,7 +655,8 @@ void Mdta_Skybox_Init(SkyboxContext* skyboxCtx, s16 skyboxId){
 
 void Mdta_Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 blend, f32 x, f32 y, f32 z){
     // Draw the skybox for this frame
-    PRINTF("MDTA Skybox Drawn\n");
+    PRINTF_COLOR_YELLOW();
+    PRINTF("MDTA Skybox Draw Start\n");
 
     OPEN_DISPS(gfxCtx, "../mdta/mdta_skybox.c", 45);
 
@@ -658,6 +691,9 @@ void Mdta_Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 ble
         gDPPipeSync(POLY_OPA_DISP++);
 
         CLOSE_DISPS(gfxCtx, "../mdta/mdta_skybox.c", 80);
+
+        PRINTF("MDTA Skybox Draw End \n");
+        PRINTF_RST();
 }
 
 
@@ -665,24 +701,14 @@ void Mdta_Skybox_Draw(SkyboxContext* skyboxCtx, GraphicsContext* gfxCtx, s16 ble
 
 void Mdta_Skybox_Update(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx){
     // Update the skybox for the next frame
-    PRINTF("MDTA Skybox Updated\n");
+    PRINTF_COLOR_CYAN();
+    PRINTF("MDTA Skybox Update Start \n");
 
     GameState* state;
-    sMdtaSkyboxEnvCtx = envCtx;
 
-    PRINTF("Weather: %d\n CurrentMode: %d\n NextMode: %d\n Blend: %d\n Time: %d\n", sMdtaSkyboxEnvCtx->skyboxConfig, sMdtaSkyboxEnvCtx->skybox1Index, sMdtaSkyboxEnvCtx->skybox2Index, sMdtaSkyboxEnvCtx->skyboxBlend, gSaveContext.skyboxTime);
+    Mdta_Skybox_Debug(envCtx);
 
-    // Get the current ZeldaTime and assign the correct palettes    
-    if (gSkyboxIsChanging == false)
-    {
-        PRINTF("Skybox is not changing\n");
-        // If the skybox is not changing via Kankyo, blend between day or night Start and End
-        //updateCurrentFrameColorSet(FINE_DAY_START_SKY_COLOR_SET, FINE_DAY_END_SKY_COLOR_SET, 0.0f);
-    }    
-    else
-    {
-        // If Kankyo is changing the skybox, blend between the current and next skybox
-        PRINTF("Skybox is changing\n");
-        //updateCurrentFrameColorSet(FINE_DAY_END_SKY_COLOR_SET, FINE_SUNSET_SKY_COLOR_SET, 0.0f);
-    }
+    
+    PRINTF("MDTA Skybox Update End \n");
+    PRINTF_RST();
 }

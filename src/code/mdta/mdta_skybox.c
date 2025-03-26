@@ -29,8 +29,6 @@ MdtaSkyboxConfig mdtaSkyboxCfg;
 ColorSetGroup predefinedColorSets;
 
 
-
-
 Mtx* Mdta_Skybox_UpdateMatrix(SkyboxContext* skyboxCtx, f32 x, f32 y, f32 z) {
     Matrix_Translate(x, y, z, MTXMODE_NEW);
     Matrix_Scale(1.0f, 1.0f, 1.0f, MTXMODE_APPLY);
@@ -529,7 +527,7 @@ ColorSetGroup Populate_ColorSets()
 
 
 
-ColorSet lerpColorSet(ColorSet* sourceSet, ColorSet* targetSet, float t) {
+ColorSet lerpColorSet(ColorSet* sourceSet, ColorSet* targetSet, f32 t) {
     // Lerps between each color in two ColorSets
     
     u8 i;
@@ -545,7 +543,7 @@ ColorSet lerpColorSet(ColorSet* sourceSet, ColorSet* targetSet, float t) {
 
 
 
-Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, float t) {
+Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, f32 t) {
     // Lerps between two colours
     Color_RGBA8 result;
 
@@ -561,9 +559,114 @@ Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, float t) {
 
 
 
+extern void Mdta_Change_Slow_Blend(EnvironmentContext* envCtx)
+{
+    // activate the slow blend if day or night modes
+    s32 dayStartTime = (CLOCK_TIME(8, 0) + 1);
+    s32 dayEndTime = CLOCK_TIME(16, 0);
+
+    s32 nightStartTime = CLOCK_TIME(19,0);
+    s32 nightEndTime = (CLOCK_TIME(4, 0) + 1);
+
+    s32 midnightTime = CLOCK_TIME(24, 0);
+
+    u16 currentTime = gSaveContext.skyboxTime;
+
+    f32 dayLength;
+    f32 nightLengthTime;
+
+    u8 steps = 255;
+
+
+    // if current mode is Fine Day or Stormy Day
+    if (mdtaSkyboxCfg.currentMode == SKYBOX_MODE_FINE_DAY && mdtaSkyboxCfg.nextMode == SKYBOX_MODE_FINE_DAY ||
+        mdtaSkyboxCfg.currentMode == SKYBOX_MODE_STORM_DAY && mdtaSkyboxCfg.nextMode == SKYBOX_MODE_STORM_DAY)
+    {
+        dayLength = (dayEndTime - dayStartTime);
+        s32 elapsedDayTime = (currentTime - dayStartTime);
+
+        // Map elapsed time to range 0-255        
+        if (currentTime >= dayStartTime && currentTime <= dayEndTime) {
+            elapsedDayTime = currentTime - dayStartTime;
+        } else {
+            elapsedDayTime = 0; // Prevent invalid ranges
+        }
+        
+        mdtaSkyboxCfg.mdtaSlowBlend = (elapsedDayTime * steps) / dayLength;
+
+    }
+    // else if current mode is Fine Night or Stormy Night
+    else if (mdtaSkyboxCfg.currentMode == SKYBOX_MODE_FINE_NIGHT && mdtaSkyboxCfg.nextMode == SKYBOX_MODE_FINE_NIGHT || 
+             mdtaSkyboxCfg.currentMode == SKYBOX_MODE_STORM_NIGHT && mdtaSkyboxCfg.nextMode == SKYBOX_MODE_STORM_NIGHT)
+    {        
+        // Determine the total time span for nighttime
+        // If nighttime crosses midnight, calculate the span as the time before midnight plus the time after midnight
+        // Check if nighttime crosses midnight
+        if (nightStartTime > nightEndTime) {
+            // Nighttime spans across midnight
+            nightLengthTime = (midnightTime - nightStartTime) + nightEndTime;
+        }
+
+
+        // Calculate the elapsed time since the nighttime started
+        // If the current time is after nightStartTime, subtract nightStartTime from currentTime
+        // Otherwise, account for the wraparound by adding the time before midnight to the currentTime
+        s32 elapsedNightTime;
+        if (currentTime >= nightStartTime)
+        {
+            elapsedNightTime = currentTime - nightStartTime;
+        } 
+        else
+        {
+            elapsedNightTime = (midnightTime - nightStartTime) + currentTime;
+        }
+
+        // Map the elapsed time to a range of 0-255
+        // Use interpolation to ensure the blending value progresses evenly over the time span
+        mdtaSkyboxCfg.mdtaSlowBlend = (elapsedNightTime * steps) / nightLengthTime;
+    }
+    else
+    {
+        // Set to 0 if at 255, and not in day or night mode
+        if(mdtaSkyboxCfg.mdtaSlowBlend >= steps)
+        {
+            mdtaSkyboxCfg.mdtaSlowBlend = 0;
+        }
+    }
+}
+
+extern f32 Mdta_Normalised_Slow_Blend_Float(s16 slowBlend, u8 steps)
+{
+    f32 result;
+    
+    result = (f32)slowBlend / steps;
+
+    return result;
+}
+
+
+
+extern const char* GetSkyboxModeName(SkyboxMode mode)
+{
+    switch (mode) {
+        case SKYBOX_MODE_FINE_SUNRISE:  return "Fine_SUNRISE";
+        case SKYBOX_MODE_FINE_DAY:      return "Fine_DAY";
+        case SKYBOX_MODE_FINE_SUNSET:   return "Fine_SUNSET";
+        case SKYBOX_MODE_FINE_NIGHT:    return "Fine_NIGHT";
+
+        case SKYBOX_MODE_STORM_SUNRISE: return "Storm_SUNRISE";
+        case SKYBOX_MODE_STORM_DAY:     return "Storm_DAY";
+        case SKYBOX_MODE_STORM_SUNSET:  return "Storm_SUNSET";
+        case SKYBOX_MODE_STORM_NIGHT:   return "Storm_NIGHT";
+        default:                        return "UNKNOWN";
+    }
+
+}
+
+
 
 extern void Mdta_Skybox_Debug(EnvironmentContext* envCtx)
-{
+{    
     // assign values to the mdta skybox config
     mdtaSkyboxCfg.currentMode = envCtx->skybox1Index;
     mdtaSkyboxCfg.nextMode = envCtx->skybox2Index;
@@ -573,23 +676,27 @@ extern void Mdta_Skybox_Debug(EnvironmentContext* envCtx)
     // format the game time into hours and minutes
     u8 timeHour;
     s16 timeMinute;
+    u8 steps = 255;
 
     timeHour = (u8)(24 * 60 / (f32)0x10000 * ((void)0, gSaveContext.skyboxTime) / 60.0f);
     timeMinute = (s16)(24 * 60 / (f32)0x10000 * ((void)0, gSaveContext.skyboxTime)) % 60;
 
     // format the game time into hours and minutes
-    PRINTF("Current Mode: %d \n Next Mode: %d \n Blend: %d \n Skybox Time: %d \n", envCtx->skybox1Index, envCtx->skybox2Index, mdtaSkyboxCfg.mdtaSkyboxBlend, gSaveContext.save.dayTime );
+    PRINTF("Current Mode: %s - %d \n Next Mode: %s - %d \n Blend: %d \n Skybox Time: %d \n", GetSkyboxModeName(mdtaSkyboxCfg.currentMode), mdtaSkyboxCfg.currentMode, GetSkyboxModeName(mdtaSkyboxCfg.nextMode), mdtaSkyboxCfg.nextMode, mdtaSkyboxCfg.mdtaSkyboxBlend, gSaveContext.save.dayTime );
+    
+    PRINTF(" Slow Blend: %d \n Slow Blend Float: %f \n", mdtaSkyboxCfg.mdtaSlowBlend, Mdta_Normalised_Slow_Blend_Float(mdtaSkyboxCfg.mdtaSlowBlend, steps));
+
     PRINTF(VT_COL(WHITE, BLACK));
-    PRINTF("Skybox Time: %d:%d \n", timeHour, timeMinute);
+    PRINTF(" Skybox Time: %d:%d  ", timeHour, timeMinute);
     PRINTF_RST();
 
     if (mdtaSkyboxCfg.mdtaSkyboxIsChanging == false)
     {
-        PRINTF("Skybox is not changing \n");
+        PRINTF(" \n Skybox is not changing \n");
     }    
     else
     {
-        PRINTF("Skybox is changing \n");
+        PRINTF(" \n Skybox is changing \n");
     }
 }
 
@@ -630,7 +737,9 @@ void Mdta_Skybox_Init(SkyboxContext* skyboxCtx, s16 skyboxId){
 
     u32 size;
     u8 i;
-    u8 j;    
+    u8 j;
+
+    mdtaSkyboxCfg.mdtaSlowBlend = 0;
     
     predefinedColorSets = Populate_ColorSets();
 
@@ -706,9 +815,10 @@ void Mdta_Skybox_Update(SkyboxContext* skyboxCtx, EnvironmentContext* envCtx){
 
     GameState* state;
 
+    Mdta_Change_Slow_Blend(envCtx);
+
     Mdta_Skybox_Debug(envCtx);
 
-    
     PRINTF("MDTA Skybox Update End \n");
     PRINTF_RST();
 }

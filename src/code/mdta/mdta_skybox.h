@@ -52,7 +52,6 @@ typedef enum ColorSetTypes{
     /* 13 */ MAX_COLOUR_SETS
 } ColorSetTypes;
 
-
 typedef struct ColorSet {
     Color_RGBA8 colorSetColors[NUM_COLORS];
 } ColorSet;
@@ -65,6 +64,7 @@ typedef struct MdtaSkyboxConfig {
     SkyboxMode currentMode;
     SkyboxMode nextMode;
     s16 mdtaSkyboxBlend;
+    s16 mdtaSlowBlend;
     bool mdtaSkyboxIsChanging;
 } MdtaSkyboxConfig;
 
@@ -93,16 +93,19 @@ extern ColorSet currentFrameColorSet;  // ColorSet for current frame's vertex co
 
 extern RomFile mdtaSkyboxFile;
 
+extern const char* GetSkyboxModeName(SkyboxMode);
 
 
 extern void Mdta_Skybox_CalculateDisplayLists();
+extern void Mdta_Change_Slow_Blend(EnvironmentContext* envCtx);
+extern f32 Mdta_Normalised_Slow_Blend_Float(s16 slowBlend, u8 steps);
 extern void Mdta_Skybox_Debug(EnvironmentContext* envCtx);
 
 
 extern ColorSetGroup Populate_ColorSets();
 //extern ColorSet lerpColorSet(ColorSet sourceSet, ColorSet targetSet, float t);
-extern Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, float t);
-extern void updateCurrentFrameColorSet(ColorSet set1, ColorSet set2, float t);
+extern Color_RGBA8 lerpColor(Color_RGBA8 c1, Color_RGBA8 c2, f32 t);
+extern void updateCurrentFrameColorSet(ColorSet set1, ColorSet set2, f32 t);
 
 
 

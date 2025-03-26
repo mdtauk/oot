@@ -1047,7 +1047,10 @@ void Play_Update(PlayState* this) {
             PLAY_LOG(3708);
             Skybox_Update(&this->skyboxCtx);
             if (this->skyboxId == SKYBOX_MDTA) {
-                Mdta_Skybox_Update(&this->skyboxCtx, &this->envCtx);
+                if (!isPaused)
+                {
+                    Mdta_Skybox_Update(&this->skyboxCtx, &this->envCtx);
+                }
             }
 
             PLAY_LOG(3716);
